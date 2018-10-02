@@ -9,14 +9,17 @@ variable "server_image_id" {
 
 variable "server_volume_size_gb" {
   description = "OpenStack Blockstorage Volume size"
+  default     = 10
 }
 
 variable "server_volume_type" {
   description = "OpenStack Blockstorage Volume type"
+  default     = "fast.ru-3a"
 }
 
 variable "server_availability_zone" {
   description = "OpenStack Compute Availability Zone"
+  default     = "ru-3a"
 }
 
 variable "server_flavor_id" {

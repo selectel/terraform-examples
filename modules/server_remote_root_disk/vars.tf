@@ -4,7 +4,7 @@ variable "server_name" {
 }
 
 variable "server_image_id" {
-  description = "OpenStack Imageservice Image reference"
+  description = "OpenStack Image reference"
 }
 
 variable "server_volume_size_gb" {

@@ -1,4 +1,4 @@
-resource "openstack_blockstorage_volume_v3" "openstack_blockstorage_volume_1" {
+resource "openstack_blockstorage_volume_v3" "volume_1" {
   name              = "volume-for-${var.server_name}"
   size              = "${var.server_volume_size_gb}"
   image_id          = "${var.server_image_id}"
@@ -10,7 +10,7 @@ resource "openstack_blockstorage_volume_v3" "openstack_blockstorage_volume_1" {
   }
 }
 
-resource "openstack_compute_instance_v2" "openstack_compute_instance_1" {
+resource "openstack_compute_instance_v2" "instance_1" {
   name              = "${var.server_name}"
   flavor_id         = "${var.server_flavor_id}"
   key_pair          = "${var.server_keypair_name}"

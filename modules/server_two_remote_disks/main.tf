@@ -1,4 +1,4 @@
-resource "openstack_blockstorage_volume_v3" "openstack_blockstorage_volume_1" {
+resource "openstack_blockstorage_volume_v3" "volume_1" {
   name              = "sda-for-${var.server_name}"
   size              = "${var.server_root_volume_size_gb}"
   image_id          = "${var.server_image_id}"
@@ -6,7 +6,7 @@ resource "openstack_blockstorage_volume_v3" "openstack_blockstorage_volume_1" {
   availability_zone = "${var.server_availability_zone}"
 }
 
-resource "openstack_blockstorage_volume_v3" "openstack_blockstorage_volume_2" {
+resource "openstack_blockstorage_volume_v3" "volume_2" {
   name              = "sdb-for-${var.server_name}"
   size              = "${var.server_second_volume_size_gb}"
   image_id          = "${var.server_image_id}"
@@ -14,7 +14,7 @@ resource "openstack_blockstorage_volume_v3" "openstack_blockstorage_volume_2" {
   availability_zone = "${var.server_availability_zone}"
 }
 
-resource "openstack_compute_instance_v2" "openstack_compute_instance_1" {
+resource "openstack_compute_instance_v2" "instance_1" {
   name              = "${var.server_name}"
   flavor_id         = "${var.server_flavor_id}"
   key_pair          = "${var.server_keypair_name}"
@@ -25,14 +25,14 @@ resource "openstack_compute_instance_v2" "openstack_compute_instance_1" {
   }
 
   block_device {
-    uuid             = "${openstack_blockstorage_volume_v3.openstack_blockstorage_volume_1.id}"
+    uuid             = "${openstack_blockstorage_volume_v3.volume_1.id}"
     source_type      = "volume"
     destination_type = "volume"
     boot_index       = 0
   }
 
   block_device {
-    uuid             = "${openstack_blockstorage_volume_v3.openstack_blockstorage_volume_2.id}"
+    uuid             = "${openstack_blockstorage_volume_v3.volume_2.id}"
     source_type      = "volume"
     destination_type = "volume"
     boot_index       = 1

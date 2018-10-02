@@ -1,3 +1,3 @@
 output "flavor_id" {
-  value = "${openstack_compute_flavor_v2.openstack_compute_flavor_1.id}"
+  value = "${openstack_compute_flavor_v2.flavor_1.id}"
 }

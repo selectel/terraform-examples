@@ -26,4 +26,8 @@ resource "openstack_compute_instance_v2" "openstack_compute_instance_1" {
     destination_type = "volume"
     boot_index       = 0
   }
+
+  vendor_options {
+    ignore_resize_confirmation = true
+  }
 }

@@ -21,7 +21,7 @@ resource "openstack_compute_instance_v2" "instance_1" {
   }
 
   block_device {
-    uuid             = "${openstack_blockstorage_volume_v3.openstack_blockstorage_volume_1.id}"
+    uuid             = "${openstack_blockstorage_volume_v3.volume_1.id}"
     source_type      = "volume"
     destination_type = "volume"
     boot_index       = 0

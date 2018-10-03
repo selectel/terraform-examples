@@ -11,5 +11,6 @@ obtained from [VPC access page](https://my.selectel.ru/vpc/access):
 
 ```bash
 $ source rc.sh
+$ terraform init
 $ terraform apply 
 ```

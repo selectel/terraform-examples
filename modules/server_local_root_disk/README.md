@@ -23,3 +23,5 @@ local root volume.
 ## Outputs
 
   * `server_id` - ID of the created OpenStack Instance.
+
+  * `server_port_id` - ID of the Instance's port.

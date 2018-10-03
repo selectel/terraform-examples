@@ -1,3 +1,13 @@
+data "openstack_networking_network_v2" "network_1" {
+  name = "${var.server_network_name}"
+}
+
+resource "openstack_networking_port_v2" "port_1" {
+  name           = "${var.server_name}-eth0"
+  admin_state_up = "true"
+  network_id     = "${data.openstack_networking_network_v2.network_1.id}"
+}
+
 resource "openstack_compute_instance_v2" "instance_1" {
   name              = "${var.server_name}"
   image_id          = "${var.server_image_id}"
@@ -6,7 +16,7 @@ resource "openstack_compute_instance_v2" "instance_1" {
   availability_zone = "${var.server_availability_zone}"
 
   network {
-    name = "${var.server_network_name}"
+    port = "${openstack_networking_port_v2.port_1.id}"
   }
 
   lifecycle {

@@ -36,6 +36,8 @@ Blockstorage V3 Volumes.
 
   * `server_id` - ID of the created OpenStack Instance.
 
+  * `server_port_id` - ID of the Instance's port.
+
   * `server_root_volume_id` - ID of the created OpenStack root Volume.
 
   * `server_second_volume_id` - ID of the created OpenStack second Volume.

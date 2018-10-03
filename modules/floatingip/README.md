@@ -1,15 +1,9 @@
 # Floating IP
 
-Terraform module for creating a single SelVPC Floating IP.
-
-## Variables
-
-  * `floatingip_project_id` - ID of the SelVPC project for managing Floating IP.
-
-  * `floatingip_region` - Floating region (Default: "ru-3").
+Terraform module for creating a single OpenStack Floating IP.
 
 ## Outputs
 
-  * `floatingip_id` - ID of the SelVPC Floating IP.
+  * `floatingip_id` - ID of the OpenStack Floating IP.
 
-  * `floatingip_address` - Address of the SelVPC Floating IP.
+  * `floatingip_address` - Address of the OpenStack Floating IP.

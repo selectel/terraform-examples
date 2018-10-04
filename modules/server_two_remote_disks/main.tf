@@ -48,6 +48,10 @@ resource "openstack_compute_instance_v2" "instance_1" {
     boot_index       = 1
   }
 
+  metadata {
+    x_sel_server_default_addr = "{\"ipv4\":\"${openstack_networking_port_v2.port_1.all_fixed_ips.0}\"}"
+  }
+
   vendor_options {
     ignore_resize_confirmation = true
   }

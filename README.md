@@ -29,13 +29,12 @@ services.
 ```
 
   * `examples` - Contains Terraform environments examples that usually have
-  several resources and use modules from `modules` directory.
-
+  several resources and use modules from `modules` directory.  
   Those examples can be used as-is or they can be updated to suit your specific
   needs.
 
   * `modules` - Contains reusable small Terraform modules that can be used in
-  many Terraform environments.
+  many Terraform environments.  
   Those modules wrap Terraform resources and datasources and provide
-  configurable variables.
+  configurable variables.  
   All of those modules are fully compatible with the Selectel VPC service.

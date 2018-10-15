@@ -10,7 +10,7 @@ module "keypair" {
   source = "../../modules/keypair"
 
   keypair_name       = "${random_string.random_name.result}"
-  keypair_public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDCcmMiseLWl02zyXd1aY31D4BAPwGOXd9PyJUCIAf/SOCADxlyANbN0S+ijb8crXWuveSUKf2bl8g9BVxzwo4mhBksnYBbFcOUegIcUHooA9z7VaDk70d3R5Ge5YGgSU07TzECgnLHZvzd223sNIoDaN0sIQXuYOf40FTJNlu3Aah0mA1pgiPSObm+FEDri546ChEt4+X1+czznG4WrIGCfRq3Gfi3Vaw0Cfe9pKn5yF21UNR51Dbf7Bwpr7Wz5Y1T8f4ThqJ0eC54byK1WLBAxVZioo3qxD6YN/fB9rueLf37I1FMaqokJ1d3pqXBD/QxyB+3ylu3hE+r2esrM0URjC9mylQ1GqSYOyHgm9kEktzr75B+tgcUuOI37H4FYh1L1MSHYq7i/nuqgOLQbIalKKzlv92vViMH42FDRYmBoU5LRIQ/qeRLlZh4p5hL0NRkZ6LdBwU0aQSOBUXzoFML2/1BSI3KJLQb2/aKqSDKqyzYw6vMiPlfCgbE6HOr1/ZFh3l0kVJ1sP/M8EnVGhDe6sBeQ5YFa5Acs4OhBEX2sQOVqf11xPeqg7kiz9PpmaeSybYdnnoFt7enWrUJpvBxj8IrlyfBV4H9R+mDnkEVC9q+VZoraiKDjMJNDvoMQSLA5xw7B1Tn53lWASgVsKwQZTNKS8C7sLnaxzI8AK/oiw== ozerov@selectel.com"
+  keypair_public_key = "${file("~/.ssh/id_rsa.pub")}"
 }
 
 # Create OpenStack flavor without local disk.

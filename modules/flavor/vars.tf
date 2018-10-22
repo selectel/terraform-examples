@@ -17,3 +17,8 @@ variable "flavor_local_disk_gb" {
   description = "Amount of GB for local storage of the OpenStack Compute Flavor"
   default     = 0
 }
+
+variable "flavor_is_public" {
+  description = "Flavor visibility"
+  default     = false
+}

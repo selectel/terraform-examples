@@ -12,4 +12,4 @@ Terraform module for creating a single SelVPC V2 License.
 
 ## Outputs
 
-  * `keypair_id` - ID of the created SelVPC V2 Keypair.
+  * `license_id` - ID of the created SelVPC V2 License.

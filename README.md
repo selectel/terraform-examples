@@ -7,25 +7,34 @@ services.
 
 ```bash
 .
-├── examples                                  
-│   ├── kubernetes_cluster
-│   ├── project
-│   ├── server_with_local_root_disk
-│   ├── server_with_remote_root_disk
-│   ├── server_with_remote_root_disk_two_ports 
-│   └── server_with_two_remote_disks
+├── examples
+│   └── vpc
+│       ├── kubernetes_cluster
+│       ├── server_local_and_remote_disks
+│       ├── server_local_root_disk
+│       ├── server_remote_root_disk
+│       └── server_remote_root_disk_two_ports
 └── modules
-    ├── flavor
-    ├── floatingip
-    ├── image_datasource
-    ├── keypair
-    ├── kubernetes_cluster
-    ├── kubernetes_cluster_template_datasource
-    ├── project
-    ├── server_local_root_disk
-    ├── server_remote_root_disk
-    ├── server_remote_root_disk_two_ports
-    └── server_two_remote_disks
+    └── vpc
+        ├── account_token
+        ├── flavor
+        ├── floatingip
+        ├── image_datasource
+        ├── keypair
+        ├── kubernetes_cluster
+        ├── license
+        ├── nat
+        ├── project
+        ├── project_token
+        ├── project_with_user
+        ├── role
+        ├── server_local_and_remote_disks
+        ├── server_local_root_disk
+        ├── server_remote_root_disk
+        ├── server_remote_root_disk_two_ports
+        ├── subnet
+        ├── user
+        └── vrrp_subnet
 ```
 
   * `examples` - Contains Terraform environments examples that usually have

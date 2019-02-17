@@ -19,6 +19,7 @@ module "flavor" {
   flavor_vcpus         = "${var.server_vcpus}"
   flavor_ram_mb        = "${var.server_ram_mb}"
   flavor_local_disk_gb = "${var.server_root_disk_gb}"
+
   lifecycle {
     create_before_destroy = false
   }
@@ -29,8 +30,9 @@ module "nat" {
 }
 
 resource "openstack_networking_port_v2" "port_1" {
-  name           = "${var.server_name}-eth0"
-  network_id     = "${module.nat.network_id}"
+  name       = "${var.server_name}-eth0"
+  network_id = "${module.nat.network_id}"
+
   fixed_ip {
     subnet_id = "${module.nat.subnet_id}"
   }

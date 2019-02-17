@@ -26,15 +26,15 @@ module "kubernetes_cluster" {
   os_region        = "${var.os_region}"
 
   # Kubernetes cluster common parameters.
-  cluster_name                 = "${var.cluster_name}"
-  cluster_zone                 = "${var.cluster_zone}"
-  cluster_kube_version         = "${var.cluster_kube_version}"
-  cluster_ssh_key              = "${file("~/.ssh/id_rsa.pub")}"
-  cluster_ssh_key_user         = "${module.project_with_user.user_id}"
-  cluster_master_lb_enabled    = "${var.cluster_master_lb_enabled}"
-  cluster_master_floating_ip   = "${var.cluster_master_floating_ip}"
-  cluster_docker_volume_size   = "${var.cluster_docker_volume_size}"
-  cluster_etcd_volume_size     = "${var.cluster_etcd_volume_size}"
+  cluster_name               = "${var.cluster_name}"
+  cluster_zone               = "${var.cluster_zone}"
+  cluster_kube_version       = "${var.cluster_kube_version}"
+  cluster_ssh_key            = "${file("~/.ssh/id_rsa.pub")}"
+  cluster_ssh_key_user       = "${module.project_with_user.user_id}"
+  cluster_master_lb_enabled  = "${var.cluster_master_lb_enabled}"
+  cluster_master_floating_ip = "${var.cluster_master_floating_ip}"
+  cluster_docker_volume_size = "${var.cluster_docker_volume_size}"
+  cluster_etcd_volume_size   = "${var.cluster_etcd_volume_size}"
 
   # Kubernetes cluster masters parameters.
   cluster_master_count = "${var.cluster_master_count}"

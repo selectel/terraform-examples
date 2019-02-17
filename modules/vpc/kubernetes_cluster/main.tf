@@ -14,17 +14,17 @@ resource "random_string" "random_name" {
 }
 
 module "master_flavor" {
-  source               = "../flavor"
-  flavor_name          = "flavor-master-${random_string.random_name.result}"
-  flavor_vcpus         = "${var.cluster_master_vcpus}"
-  flavor_ram_mb        = "${var.cluster_master_ram}"
+  source        = "../flavor"
+  flavor_name   = "flavor-master-${random_string.random_name.result}"
+  flavor_vcpus  = "${var.cluster_master_vcpus}"
+  flavor_ram_mb = "${var.cluster_master_ram}"
 }
 
 module "flavor" {
-  source               = "../flavor"
-  flavor_name          = "flavor-${random_string.random_name.result}"
-  flavor_vcpus         = "${var.cluster_node_vcpus}"
-  flavor_ram_mb        = "${var.cluster_node_ram}"
+  source        = "../flavor"
+  flavor_name   = "flavor-${random_string.random_name.result}"
+  flavor_vcpus  = "${var.cluster_node_vcpus}"
+  flavor_ram_mb = "${var.cluster_node_ram}"
 }
 
 module "image_datasource" {
@@ -58,6 +58,7 @@ resource "openstack_containerinfra_clustertemplate_v1" "clustertemplate_1" {
   master_lb_enabled     = "${var.cluster_master_lb_enabled}"
   floating_ip_enabled   = false
   external_network_id   = "${data.openstack_networking_network_v2.external_net.id}"
+
   labels = {
     kube_tag                         = "${var.cluster_kube_version}"
     kube_dashboard_enabled           = "${var.cluster_kube_dashboard_enabled}"

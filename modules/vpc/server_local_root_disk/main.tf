@@ -26,8 +26,9 @@ module "nat" {
 }
 
 resource "openstack_networking_port_v2" "port_1" {
-  name           = "${var.server_name}-eth0"
-  network_id     = "${module.nat.network_id}"
+  name       = "${var.server_name}-eth0"
+  network_id = "${module.nat.network_id}"
+
   fixed_ip {
     subnet_id = "${module.nat.subnet_id}"
   }

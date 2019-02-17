@@ -14,10 +14,10 @@ resource "random_string" "random_name" {
 }
 
 module "flavor" {
-  source               = "../flavor"
-  flavor_name          = "flavor-${random_string.random_name.result}"
-  flavor_vcpus         = "${var.server_vcpus}"
-  flavor_ram_mb        = "${var.server_ram_mb}"
+  source        = "../flavor"
+  flavor_name   = "flavor-${random_string.random_name.result}"
+  flavor_vcpus  = "${var.server_vcpus}"
+  flavor_ram_mb = "${var.server_ram_mb}"
 }
 
 module "nat" {
@@ -25,8 +25,9 @@ module "nat" {
 }
 
 resource "openstack_networking_port_v2" "port_1" {
-  name           = "${var.server_name}-eth0"
-  network_id     = "${module.nat.network_id}"
+  name       = "${var.server_name}-eth0"
+  network_id = "${module.nat.network_id}"
+
   fixed_ip {
     subnet_id = "${module.nat.subnet_id}"
   }

@@ -1,6 +1,6 @@
 # Initialize Selectel provider with token.
 provider "selectel" {
-  token    = "${var.sel_token}"
+  token = "${var.sel_token}"
 }
 
 # Create the main project with user.

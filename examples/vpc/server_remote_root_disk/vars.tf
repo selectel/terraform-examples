@@ -11,7 +11,7 @@ variable "user_name" {}
 variable "user_password" {}
 
 variable "keypair_name" {
-  default= "tf_keypair"
+  default = "tf_keypair"
 }
 
 variable "os_auth_url" {

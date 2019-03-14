@@ -31,7 +31,7 @@ variable external_net_name {
 }
 
 variable cluster_image_name {
-  default = "Fedora Atomic 27 64-bit"
+  default = "Fedora Atomic 29 64-bit"
 }
 
 variable cluster_ssh_key {}
@@ -43,7 +43,7 @@ variable cluster_name {
 }
 
 variable cluster_kube_version {
-  default = "v1.12.4"
+  default = "v1.13.4"
 }
 
 variable cluster_zone {

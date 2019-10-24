@@ -33,7 +33,7 @@ variable "cluster_zone" {
 }
 
 variable "cluster_kube_version" {
-  default = "v1.13.4"
+  default = "v1.15.4"
 }
 
 variable "cluster_master_count" {

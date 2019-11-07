@@ -58,11 +58,11 @@ resource "openstack_containerinfra_clustertemplate_v1" "clustertemplate_1" {
   master_lb_enabled     = "${var.cluster_master_lb_enabled}"
   floating_ip_enabled   = false
   external_network_id   = "${data.openstack_networking_network_v2.external_net.id}"
+  monitoring_enabled    = "${var.cluster_monitoring_enabled}"
 
   labels = {
     kube_tag                         = "${var.cluster_kube_version}"
     kube_dashboard_enabled           = "${var.cluster_kube_dashboard_enabled}"
-    prometheus_monitoring            = "${var.cluster_prometheus_monitoring}"
     influx_grafana_dashboard_enabled = "${var.cluster_influx_grafana_dashboard_enabled}"
     etcd_volume_size                 = "${var.cluster_etcd_volume_size}"
     docker_volume_type               = "fast.${var.cluster_zone}"

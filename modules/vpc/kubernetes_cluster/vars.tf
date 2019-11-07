@@ -70,8 +70,8 @@ variable cluster_kube_dashboard_enabled {
   default = "true"
 }
 
-variable cluster_prometheus_monitoring {
-  default = "true"
+variable cluster_monitoring_enabled {
+  default = true
 }
 
 variable cluster_influx_grafana_dashboard_enabled {

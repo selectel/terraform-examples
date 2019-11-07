@@ -75,3 +75,7 @@ variable "cluster_etcd_volume_size" {
 variable "cluster_master_floating_ip" {
   default = "True"
 }
+
+variable cluster_monitoring_enabled {
+  default = true
+}

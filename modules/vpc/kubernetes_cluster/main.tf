@@ -58,7 +58,6 @@ resource "openstack_containerinfra_clustertemplate_v1" "clustertemplate_1" {
   master_lb_enabled     = "${var.cluster_master_lb_enabled}"
   floating_ip_enabled   = false
   external_network_id   = "${data.openstack_networking_network_v2.external_net.id}"
-  monitoring_enabled    = "${var.cluster_monitoring_enabled}"
 
   labels = {
     kube_tag                         = "${var.cluster_kube_version}"

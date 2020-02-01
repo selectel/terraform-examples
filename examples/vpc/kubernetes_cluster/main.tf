@@ -35,7 +35,6 @@ module "kubernetes_cluster" {
   cluster_master_floating_ip = "${var.cluster_master_floating_ip}"
   cluster_docker_volume_size = "${var.cluster_docker_volume_size}"
   cluster_etcd_volume_size   = "${var.cluster_etcd_volume_size}"
-  cluster_monitoring_enabled = "${var.cluster_monitoring_enabled}"
 
   # Kubernetes cluster masters parameters.
   cluster_master_count = "${var.cluster_master_count}"

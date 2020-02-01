@@ -19,10 +19,6 @@ module "flavor" {
   flavor_vcpus         = "${var.server_vcpus}"
   flavor_ram_mb        = "${var.server_ram_mb}"
   flavor_local_disk_gb = "${var.server_root_disk_gb}"
-
-  lifecycle {
-    create_before_destroy = false
-  }
 }
 
 module "nat" {

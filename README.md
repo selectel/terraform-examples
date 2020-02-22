@@ -13,7 +13,8 @@ services.
 │       ├── server_local_and_remote_disks
 │       ├── server_local_root_disk
 │       ├── server_remote_root_disk
-│       └── server_remote_root_disk_two_ports
+│       ├── server_remote_root_disk_two_ports
+│       └── several_servers_one_network
 └── modules
     └── vpc
         ├── account_token

@@ -1,7 +1,7 @@
 # Server with remote root disk
 
-This environment will create a Selectel VPC project with a single server booted
-from a remote disk that has two network ports in different subnets.
+This environment will create a Selectel VPC project with a single windows server booted
+from a remote disk.
 
 ## Example usage
 

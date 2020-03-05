@@ -35,6 +35,8 @@ remote root volume.
 
   * `server_ssh_key_user` - Owner of the SSH keypair.
 
+  * `server_license_type` - Windows license type.
+
 ## Outputs
 
   * `server_id` - ID of the created OpenStack Server.

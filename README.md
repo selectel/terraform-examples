@@ -14,6 +14,7 @@ services.
 │       ├── server_local_root_disk
 │       ├── server_remote_root_disk
 │       ├── server_remote_root_disk_two_ports
+│       ├── server_windows
 │       └── several_servers_one_network
 └── modules
     └── vpc

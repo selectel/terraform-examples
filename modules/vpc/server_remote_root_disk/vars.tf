@@ -39,3 +39,7 @@ variable "server_zone" {
 variable "server_ssh_key" {}
 
 variable "server_ssh_key_user" {}
+
+variable "server_license_type" {
+  default = ""
+}

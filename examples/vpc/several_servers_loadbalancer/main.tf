@@ -78,15 +78,6 @@ module "lb_members_http" {
   lb_protocol_port  = module.lb_listener_http.lb_protocol_port
 }
 
-# Add members to HTTP listener
-module "lb_members_http" {
-  source = "../../../modules/vpc/lb_member"
-
-  lb_members        = module.multiple_servers.server_access_ips
-  lb_pool_id        = module.lb_listener_http.lb_pool_id
-  lb_protocol_port  = module.lb_listener_http.lb_protocol_port
-}
-
 # Create UDP listener, pool and monitor
 module "lb_listener_udp" {
   source = "../../../modules/vpc/lb_listener_udp"

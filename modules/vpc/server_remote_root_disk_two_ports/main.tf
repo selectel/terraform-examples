@@ -28,7 +28,7 @@ resource "openstack_networking_subnet_v2" "subnet_2" {
   cidr       = "10.0.0.0/24"
   network_id = module.nat.network_id
 
-  dns_nameservers = ["188.93.16.19", "188.93.17.19", "109.234.159.91"]
+  dns_nameservers = ["188.93.16.19", "188.93.17.19"]
 }
 
 resource "openstack_networking_port_v2" "port_1" {

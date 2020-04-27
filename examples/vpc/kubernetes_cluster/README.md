@@ -3,6 +3,9 @@
 This environment will create a Selectel VPC project with a single Kubernetes
 cluster.
 
+Note: manifests for OpenStack Magnum were removed. They will be replaced by Managed Kubernetes Service manifests later.
+Progress on MKS Terraform is traced there: https://github.com/terraform-providers/terraform-provider-selectel/issues/74
+
 ## Example usage
 
 ```sh

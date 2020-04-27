@@ -2,3 +2,5 @@
 *.tfstate.backup
 .terraform/
 secrets.tfvars
+.idea
+.DS_Store

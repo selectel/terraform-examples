@@ -8,8 +8,9 @@ services.
 ```bash
 .
 ├── examples
+│   └── mks
+│       └── cluster_one_nodegroup
 │   └── vpc
-│       ├── kubernetes_cluster
 │       ├── server_local_and_remote_disks
 │       ├── server_local_root_disk
 │       ├── server_remote_root_disk
@@ -18,6 +19,9 @@ services.
 │       ├── several_servers_loadbalancer
 │       └── several_servers_one_network
 └── modules
+    └── mks
+        ├── cluster
+        └── nodegroup
     └── vpc
         ├── account_token
         ├── flavor

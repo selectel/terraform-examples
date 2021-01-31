@@ -17,7 +17,8 @@ services.
 │       ├── server_remote_root_disk_two_ports
 │       ├── server_windows
 │       ├── several_servers_loadbalancer
-│       └── several_servers_one_network
+│       ├── several_servers_one_network
+│       └── several_servers_routing
 └── modules
     └── mks
         ├── cluster
@@ -40,6 +41,10 @@ services.
         ├── project_token
         ├── project_with_user
         ├── role
+        ├── routing_example_network
+        ├── routing_example_os
+        ├── routing_example_selvpc
+        ├── routing_example_servers
         ├── server_local_and_remote_disks
         ├── server_local_root_disk
         ├── server_remote_root_disk

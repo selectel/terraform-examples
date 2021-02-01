@@ -13,7 +13,7 @@ env \
   terraform apply
 ```
 
-# OR use secrets.tfvars
+## OR use secrets.tfvars
 
 ```sh
   terraform apply -var-file secrets.tfvars

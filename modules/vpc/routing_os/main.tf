@@ -1,12 +1,12 @@
-module routing_network {
+module "routing_network" {
   source = "../routing_network"
 
-  selvpc_subnet_cidr  = var.selvpc_subnet_cidr
-  selvpc_subnet_id    = var.selvpc_subnet_id
-  selvpc_network_id   = var.selvpc_network_id
+  selvpc_subnet_cidr = var.selvpc_subnet_cidr
+  selvpc_subnet_id   = var.selvpc_subnet_id
+  selvpc_network_id  = var.selvpc_network_id
 }
 
-module routing_servers {
+module "routing_servers" {
   source = "../routing_servers"
 
   keypair_name                          = var.keypair_name

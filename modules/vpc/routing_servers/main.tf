@@ -5,7 +5,7 @@ module "image_datasource" {
 }
 
 ### MAIN SERVER
-resource openstack_blockstorage_volume_v3 main_server_volume {
+resource "openstack_blockstorage_volume_v3" "main_server_volume" {
   name              = "main_server_volume"
   size              = 5
   image_id          = module.image_datasource.image_id
@@ -17,7 +17,7 @@ resource openstack_blockstorage_volume_v3 main_server_volume {
   }
 }
 
-resource openstack_compute_instance_v2 main_server {
+resource "openstack_compute_instance_v2" "main_server" {
   name              = "main_server"
   flavor_id         = 1011
   key_pair          = var.keypair_name
@@ -48,7 +48,7 @@ resource openstack_compute_instance_v2 main_server {
 }
 
 ### SERVER WITH DOCKER
-resource openstack_blockstorage_volume_v3 server_with_docker_volume {
+resource "openstack_blockstorage_volume_v3" "server_with_docker_volume" {
   name              = "server_with_docker_volume"
   size              = 5
   image_id          = module.image_datasource.image_id
@@ -60,7 +60,7 @@ resource openstack_blockstorage_volume_v3 server_with_docker_volume {
   }
 }
 
-resource openstack_compute_instance_v2 server_with_docker {
+resource "openstack_compute_instance_v2" "server_with_docker" {
   name              = "server_with_docker"
   flavor_id         = 1011
   key_pair          = var.keypair_name
@@ -87,7 +87,7 @@ resource openstack_compute_instance_v2 server_with_docker {
 }
 
 ### PROXY SERVER WITH PUBLIC SUBNET
-resource openstack_blockstorage_volume_v3 proxy_server_volume {
+resource "openstack_blockstorage_volume_v3" "proxy_server_volume" {
   name              = "proxy_server_volume"
   size              = 5
   image_id          = module.image_datasource.image_id
@@ -99,7 +99,7 @@ resource openstack_blockstorage_volume_v3 proxy_server_volume {
   }
 }
 
-resource openstack_compute_instance_v2 proxy_server {
+resource "openstack_compute_instance_v2" "proxy_server" {
   name              = "proxy_server"
   flavor_id         = 1011
   key_pair          = var.keypair_name
@@ -130,9 +130,9 @@ resource openstack_compute_instance_v2 proxy_server {
       "sysctl net.ipv4.ip_forward=1",
     ]
     connection {
-      type  = "ssh"
-      user  = "root"
-      host  = var.proxy_server_public_subnet_port_ip
+      type        = "ssh"
+      user        = "root"
+      host        = var.proxy_server_public_subnet_port_ip
       private_key = file("~/.ssh/id_rsa")
     }
   }

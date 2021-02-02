@@ -16,7 +16,7 @@ module selectel_section {
   providers = {
     selectel = selectel,
   }
-  source = "../../../modules/vpc/routing_example_selvpc"
+  source = "../../../modules/vpc/routing_selvpc"
 
   user_password = var.user_password
   project_name  = var.project_name
@@ -29,7 +29,7 @@ module openstack_section {
   providers = {
     openstack = openstack,
   }
-  source = "../../../modules/vpc/routing_example_os"
+  source = "../../../modules/vpc/routing_os"
 
   selvpc_network_id   = module.selectel_section.selvpc_network_id
   selvpc_subnet_id    = module.selectel_section.selvpc_subnet_id

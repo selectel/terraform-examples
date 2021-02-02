@@ -24,6 +24,13 @@ module "project_with_user" {
   user_password = var.user_password
 }
 
+module "keypair" {
+  source             = "../../../modules/vpc/keypair"
+  keypair_name       = var.keypair_name
+  keypair_public_key = file("~/.ssh/id_rsa.pub")
+  keypair_user_id    = module.project_with_user.user_id
+}
+
 # Create a network
 module "nat" {
   source = "../../../modules/vpc/nat"
@@ -42,8 +49,7 @@ module "multiple_servers" {
   server_ram_mb       = var.server_ram_mb
   server_root_disk_gb = var.server_root_disk_gb
   server_image_name   = var.server_image_name
-  server_ssh_key      = file("~/.ssh/id_rsa.pub")
-  server_ssh_key_user = module.project_with_user.user_id
+  keypair_name        = var.keypair_name
 
   server_network_id   = module.nat.network_id
   server_subnet_id    = module.nat.subnet_id

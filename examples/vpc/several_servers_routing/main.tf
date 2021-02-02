@@ -1,8 +1,8 @@
-provider selectel {
+provider "selectel" {
   token = var.sel_token
 }
 
-provider openstack {
+provider "openstack" {
   user_name           = var.user_name
   tenant_name         = var.project_name
   password            = var.user_password
@@ -12,7 +12,7 @@ provider openstack {
   region              = substr(var.target_zone, 0, 4)
 }
 
-module selectel_section {
+module "selectel_section" {
   providers = {
     selectel = selectel,
   }
@@ -25,18 +25,18 @@ module selectel_section {
   keypair_name  = var.keypair_name
 }
 
-module openstack_section {
+module "openstack_section" {
   providers = {
     openstack = openstack,
   }
   source = "../../../modules/vpc/routing_os"
 
-  selvpc_network_id   = module.selectel_section.selvpc_network_id
-  selvpc_subnet_id    = module.selectel_section.selvpc_subnet_id
-  selvpc_subnet_cidr  = module.selectel_section.selvpc_subnet_cidr
-  keypair_name        = var.keypair_name
-  target_zone         = var.target_zone
-  server_image_name   = var.server_image_name
+  selvpc_network_id  = module.selectel_section.selvpc_network_id
+  selvpc_subnet_id   = module.selectel_section.selvpc_subnet_id
+  selvpc_subnet_cidr = module.selectel_section.selvpc_subnet_cidr
+  keypair_name       = var.keypair_name
+  target_zone        = var.target_zone
+  server_image_name  = var.server_image_name
 
   depends_on = [
     module.selectel_section,

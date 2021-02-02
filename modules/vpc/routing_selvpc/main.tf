@@ -1,6 +1,6 @@
-module project_with_user {
+module "project_with_user" {
   providers = {
-      selectel = selectel,
+    selectel = selectel,
   }
   source = "../../../modules/vpc/project_with_user"
 
@@ -9,23 +9,23 @@ module project_with_user {
   user_password = var.user_password
 }
 
-module keypair {
+module "keypair" {
   providers = {
     selectel = selectel
   }
-  source             = "../../../modules/vpc/keypair"
+  source = "../../../modules/vpc/keypair"
 
   keypair_name       = var.keypair_name
   keypair_public_key = file("~/.ssh/id_rsa.pub")
   keypair_user_id    = module.project_with_user.user_id
 }
 
-module public_subnet_29 {
+module "public_subnet_29" {
   providers = {
     selectel = selectel
   }
   source = "../../../modules/vpc/subnet"
 
-  subnet_region = substr(var.target_zone, 0, 4)
+  subnet_region     = substr(var.target_zone, 0, 4)
   subnet_project_id = module.project_with_user.project_id
 }

@@ -71,7 +71,7 @@ resource "openstack_compute_instance_v2" "instance_1" {
     for_each = var.server_license_type != "" ? [var.server_license_type] : []
 
     content {
-      name            = var.server_license_type
+      name = var.server_license_type
     }
   }
 

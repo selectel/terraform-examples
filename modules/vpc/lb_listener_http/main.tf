@@ -3,8 +3,8 @@ resource "openstack_lb_listener_v2" "listener" {
   protocol_port   = var.protocol_port
   loadbalancer_id = var.loadbalancer_id
   insert_headers = {
-    X-Forwarded-For = var.x_forwarded_for
-    X-Forwarded-Port = var.x_forwarded_port
+    X-Forwarded-For   = var.x_forwarded_for
+    X-Forwarded-Port  = var.x_forwarded_port
     X-Forwarded-Proto = var.x_forwarded_proto
   }
 }

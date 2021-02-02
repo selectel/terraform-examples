@@ -14,4 +14,8 @@ Terraform module for creating a single Selectel VPC Subnet.
 
 ## Outputs
 
+  * `network_id` - ID of the created Selectel VPC public subnet's Network.
+
   * `subnet_id` - ID of the created Selectel VPC Subnet.
+
+  * `subnet_cidr` - CIDR of the created Selectel VPC Subnet.

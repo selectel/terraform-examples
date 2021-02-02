@@ -1,5 +1,5 @@
-variable "user_name" {
+variable user_password {}
+
+variable user_name {
   default = "user_1"
 }
-
-variable "user_password" {}

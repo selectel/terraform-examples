@@ -5,7 +5,7 @@ resource "openstack_lb_listener_v2" "listener" {
 }
 
 resource "openstack_lb_pool_v2" "pool" {
-  protocol    = openstack_lb_listener_v2.listener.protocol
+  protocol    = var.lb_components["pool_protocol"]
   lb_method   = var.lb_components["pool_lb_method"]
   listener_id = openstack_lb_listener_v2.listener.id
 }

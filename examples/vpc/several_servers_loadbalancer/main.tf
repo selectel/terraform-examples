@@ -19,12 +19,11 @@ module "selectel_section" {
   providers = {
     selectel = selectel,
   }
-  source = "../../../modules/vpc/lb_selvpc"
+  source = "../../../modules/vpc/project_with_user"
 
-  user_password = var.user_password
   project_name  = var.project_name
   user_name     = var.user_name
-  target_zone   = var.target_zone
+  user_password = var.user_password
   keypair_name  = var.keypair_name
 }
 

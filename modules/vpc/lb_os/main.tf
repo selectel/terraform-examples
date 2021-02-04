@@ -1,11 +1,11 @@
 # Create a network
 module "nat" {
-  source = "../../../modules/vpc/nat"
+  source = "../nat"
 }
 
 # Create OpenStack Compute instances.
 module "multiple_servers" {
-  source = "../../../modules/vpc/multiple_servers"
+  source = "../multiple_servers"
 
   replicas_count = var.count_of_servers
 
@@ -23,7 +23,7 @@ module "multiple_servers" {
 
 # Create loadbalancer
 module "lb_loadbalancer" {
-  source = "../../../modules/vpc/lb_loadbalancer"
+  source = "../lb_loadbalancer"
 
   vip_subnet_id = module.nat.subnet_id
   lb_flavor_id  = var.lb_flavor_id
@@ -32,7 +32,7 @@ module "lb_loadbalancer" {
 # Create HTTP or HTTPS listeners. pools, monitors and members
 module "lb_components_http" {
   count  = length(var.lb_components_http)
-  source = "../../../modules/vpc/lb_components_http"
+  source = "../lb_components_http"
 
   lb_components     = var.lb_components_http["component_${count.index + 1}"]
   loadbalancer_id   = module.lb_loadbalancer.loadbalancer_id
@@ -42,7 +42,7 @@ module "lb_components_http" {
 # Create TCP or UDP listeners, pools, monitors and memebers
 module "lb_components" {
   count  = length(var.lb_components)
-  source = "../../../modules/vpc/lb_components"
+  source = "../lb_components"
 
   lb_components     = var.lb_components["component_${count.index + 1}"]
   loadbalancer_id   = module.lb_loadbalancer.loadbalancer_id

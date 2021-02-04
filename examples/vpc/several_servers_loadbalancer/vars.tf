@@ -41,6 +41,7 @@ variable "lb_components_http" {
       pool_lb_method             = "ROUND_ROBIN"
       pool_cookie_type           = "APP_COOKIE"
       pool_cookie_name           = "testCookie"
+      pool_protocol              = "PROXY"
       member_protocol_port       = 90
     }
   }
@@ -56,19 +57,10 @@ variable "lb_components" {
       monitor_timeout        = 10
       monitor_retries        = 5
       pool_lb_method         = "LEAST_CONNECTIONS"
+      pool_protocol          = "TCP"
       member_protocol_port   = 22
     }
     component_2 = {
-      listener_protocol      = "TCP"
-      listener_protocol_port = 9090
-      monitor_type           = "TCP"
-      monitor_delay          = 25
-      monitor_timeout        = 15
-      monitor_retries        = 10
-      pool_lb_method         = "LEAST_CONNECTIONS"
-      member_protocol_port   = 9091
-    }
-    component_3 = {
       listener_protocol      = "UDP"
       listener_protocol_port = 8080
       monitor_type           = "UDP-CONNECT"
@@ -76,6 +68,7 @@ variable "lb_components" {
       monitor_timeout        = 10
       monitor_retries        = 5
       pool_lb_method         = "LEAST_CONNECTIONS"
+      pool_protocol          = "UDP"
       member_protocol_port   = 8080
     }
   }

@@ -14,3 +14,12 @@ module "role" {
   role_project_id = module.project.project_id
   role_user_id    = module.user.user_id
 }
+
+module "keypair" {
+  count  = var.keypair_name != "" ? 1 : 0
+  source = "../keypair"
+
+  keypair_name       = var.keypair_name
+  keypair_public_key = file("~/.ssh/id_rsa.pub")
+  keypair_user_id    = module.user.user_id
+}

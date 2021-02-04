@@ -33,7 +33,6 @@ services.
         ├── lb_components_http
         ├── lb_loadbalancer
         ├── lb_os
-        ├── lb_selvpc
         ├── license
         ├── multiple_servers
         ├── nat

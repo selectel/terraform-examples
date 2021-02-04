@@ -38,4 +38,4 @@ env \
 
 ## Outputs
 
-  * `floating_ip` - IP Address of a created floating IP.
+  * `floating_ip` - Public IP address of a created loadbalancer.

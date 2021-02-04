@@ -32,3 +32,7 @@ local root volume and connected to a specified network.
   * `server_ids` - List with IDs of the created OpenStack Servers.
 
   * `server_port_ids` - List of IDs of Servers ports.
+
+  * `server_access_ips` - List of server IPs.
+
+  * `server_access_names` - List of server names.

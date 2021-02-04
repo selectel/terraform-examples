@@ -29,11 +29,11 @@ services.
         ├── floatingip
         ├── image_datasource
         ├── keypair
-        ├── kubernetes_cluster
-        ├── lb_listener_http
-        ├── lb_listener_udp
+        ├── lb_components
+        ├── lb_components_http
         ├── lb_loadbalancer
-        ├── lb_member
+        ├── lb_os
+        ├── lb_selvpc
         ├── license
         ├── multiple_servers
         ├── nat
@@ -41,10 +41,10 @@ services.
         ├── project_token
         ├── project_with_user
         ├── role
-        ├── routing_example_network
-        ├── routing_example_os
-        ├── routing_example_selvpc
-        ├── routing_example_servers
+        ├── routing_network
+        ├── routing_os
+        ├── routing_selvpc
+        ├── routing_servers
         ├── server_local_and_remote_disks
         ├── server_local_root_disk
         ├── server_remote_root_disk

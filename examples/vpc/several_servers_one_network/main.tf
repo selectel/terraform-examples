@@ -40,7 +40,7 @@ module "nat" {
 module "multiple_servers" {
   source = "../../../modules/vpc/multiple_servers"
 
-  replicas_count      = var.count_of_servers
+  replicas_count = var.count_of_servers
 
   # OpenStack Instance parameters.
   server_name         = var.server_name
@@ -51,6 +51,6 @@ module "multiple_servers" {
   server_image_name   = var.server_image_name
   keypair_name        = var.keypair_name
 
-  server_network_id   = module.nat.network_id
-  server_subnet_id    = module.nat.subnet_id
+  server_network_id = module.nat.network_id
+  server_subnet_id  = module.nat.subnet_id
 }

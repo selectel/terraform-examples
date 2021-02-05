@@ -16,9 +16,9 @@ module "project_with_user" {
 module "win_license" {
   source = "../../../modules/vpc/license"
 
-  license_project_id  = module.project_with_user.project_id
-  license_region      = var.os_region
-  license_type        = var.license_type
+  license_project_id = module.project_with_user.project_id
+  license_region     = var.os_region
+  license_type       = var.license_type
 }
 
 # Create an OpenStack Compute instance.

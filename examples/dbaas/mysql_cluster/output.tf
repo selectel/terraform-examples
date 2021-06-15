@@ -20,5 +20,5 @@ output "db_name" {
 }
 
 output "master_host" {
-  value = (selectel_dbaas_datastore_v1.datastore_1.connections[*])[0]["master"]
+  value = selectel_dbaas_datastore_v1.datastore_1.connections["master"]
 }

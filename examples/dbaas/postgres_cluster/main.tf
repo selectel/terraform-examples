@@ -6,8 +6,7 @@ terraform {
   required_providers {
     selectel = {
       source  = "selectel/selectel"
-      version = "~> 3.6.0"
-
+      version = "~> 3.6.2"
     }
     openstack = {
       source  = "terraform-provider-openstack/openstack"
@@ -116,8 +115,8 @@ resource "selectel_dbaas_database_v1" "database_1" {
 ####################################
 
 data "selectel_dbaas_available_extension_v1" "ae" {
-  project_id   = var.project_id
-  region       = var.region
+  project_id = var.project_id
+  region     = var.region
   filter {
     name = "hstore"
   }

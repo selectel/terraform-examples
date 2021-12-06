@@ -1,12 +1,19 @@
-# OpenStack load balancer HTTP listener components
+# HTTP/HTTPS компоненты для создания балансировщиков
 
-Terraform module for creating Openstack load balancer HTTP listener components.
-Listener, pool, monitor, member.
+Модуль создания HTTP/HTTPS компонентов балансировщика:
+- listener
+- pool
+- monitor
+- member
 
-## Variables
+## Принимаемые переменные
 
-  * `loadbalancer_id` - ID of the created load balancer.
+  * `loadbalancer_id` - UUID балансировщика, для которого будут созданы компоненты.
 
-  * `server_access_ips` - List of server IPs.
+  * `server_access_ips` - IP адреса серверов, на которые будет направляться трафик.
 
-  * `lb_components` - Loadbalancer component's arguments.
+  * `lb_components` - Переменные компонентов балансировщика.
+
+  * `vip_subnet_id` - UUID подсети, в которой находятся серверы.
+
+  * `default_tls_container_ref` - Ссылка на контейнер Barbican, содержащий информацию о SSL сертификате.

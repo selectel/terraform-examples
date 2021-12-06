@@ -1,6 +1,10 @@
-variable "server_network_id" {}
+variable "private_network_id" {}
 
-variable "server_subnet_id" {}
+variable "private_subnet_id" {}
+
+variable "public_network_id" {}
+
+variable "public_subnet_id" {}
 
 variable "server_image_name" {}
 
@@ -11,11 +15,7 @@ variable "server_name" {
 }
 
 variable "server_zone" {
-  default = "ru-9a"
-}
-
-variable "replicas_count" {
-  default = 1
+  default = "ru-3a"
 }
 
 variable "server_vcpus" {
@@ -27,5 +27,9 @@ variable "server_ram_mb" {
 }
 
 variable "server_root_disk_gb" {
-  default = 5
+  default = 8
+}
+
+variable "user_data" {
+  default = ""
 }

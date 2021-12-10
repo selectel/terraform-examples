@@ -1,9 +1,9 @@
-# Инициализация terraform провайдера Selectel.
+# Инициализация terraform провайдера Selectel
 provider "selectel" {
   token = var.sel_token
 }
 
-# Создание проекта, пользователя и роли.
+# Создание проекта, пользователя и роли
 module "selectel_section" {
   providers = {
     selectel = selectel,
@@ -15,7 +15,7 @@ module "selectel_section" {
   user_password = var.user_password
 }
 
-# Инициализация провайдера Openstack.
+# Инициализация провайдера Openstack
 provider "openstack" {
   user_name           = var.user_name
   tenant_name         = var.project_name
@@ -27,7 +27,7 @@ provider "openstack" {
   use_octavia         = true
 }
 
-# Создание ресурсов Openstack.
+# Создание ресурсов Openstack
 module "openstack_environment" {
   providers = {
     openstack = openstack,
@@ -43,7 +43,7 @@ module "openstack_environment" {
   ]
 }
 
-# Создание балансировщика базового типа без резервирования с TCP/UDP правилами.
+# Создание балансировщика базового типа без резервирования с TCP/UDP правилами
 module "openstack_lb_sngl" {
   providers = {
     openstack = openstack,

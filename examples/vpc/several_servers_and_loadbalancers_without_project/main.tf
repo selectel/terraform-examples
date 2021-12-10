@@ -1,4 +1,4 @@
-# Инициализация провайдера Openstack.
+# Инициализация провайдера Openstack
 provider "openstack" {
   user_name           = var.user_name
   tenant_name         = var.project_name
@@ -10,7 +10,7 @@ provider "openstack" {
   use_octavia         = true
 }
 
-# Создание ресурсов Openstack.
+# Создание ресурсов Openstack
 module "openstack_environment" {
   providers = {
     openstack = openstack,
@@ -22,7 +22,7 @@ module "openstack_environment" {
   server_image_name  = var.server_image_name
 }
 
-# Создание балансировщика базового типа без резервирования и с TCP/UDP правилами.
+# Создание балансировщика базового типа без резервирования и с TCP/UDP правилами
 module "openstack_lb_sngl" {
   providers = {
     openstack = openstack,

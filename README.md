@@ -20,7 +20,8 @@ services.
 │       ├── server_remote_root_disk
 │       ├── server_remote_root_disk_two_ports
 │       ├── server_windows
-│       ├── several_servers_loadbalancer
+│       ├── several_servers_and_loadbalancers_with_project
+│       ├── several_servers_and_loadbalancers_without_project
 │       ├── several_servers_one_network
 │       └── several_servers_routing
 └── modules
@@ -33,13 +34,14 @@ services.
         ├── floatingip
         ├── image_datasource
         ├── keypair
+        ├── lb_active_standby
         ├── lb_components
         ├── lb_components_http
-        ├── lb_loadbalancer
-        ├── lb_os
+        ├── lb_sngl
         ├── license
         ├── multiple_servers
         ├── nat
+        ├── os_lb_env
         ├── project
         ├── project_token
         ├── project_with_user
@@ -52,6 +54,7 @@ services.
         ├── server_local_root_disk
         ├── server_remote_root_disk
         ├── server_remote_root_disk_two_ports
+        ├── single_instance
         ├── subnet
         ├── user
         └── vrrp_subnet

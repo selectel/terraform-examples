@@ -1,5 +1,6 @@
 data "openstack_networking_network_v2" "external_net" {
-  name = var.router_external_net_name
+  name     = var.router_external_net_name
+  external = true
 }
 
 resource "openstack_networking_router_v2" "router_1" {

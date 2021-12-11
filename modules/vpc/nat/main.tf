@@ -13,9 +13,10 @@ resource "openstack_networking_network_v2" "network_1" {
 }
 
 resource "openstack_networking_subnet_v2" "subnet_1" {
-  network_id = openstack_networking_network_v2.network_1.id
-  name       = var.subnet_cidr
-  cidr       = var.subnet_cidr
+  network_id      = openstack_networking_network_v2.network_1.id
+  dns_nameservers = var.dns_nameservers
+  name            = var.subnet_cidr
+  cidr            = var.subnet_cidr
 }
 
 resource "openstack_networking_router_interface_v2" "router_interface_1" {

@@ -4,4 +4,9 @@ resource "openstack_compute_flavor_v2" "flavor_1" {
   vcpus     = var.flavor_vcpus
   disk      = var.flavor_local_disk_gb
   is_public = var.flavor_is_public
+
+  lifecycle {
+    create_before_destroy = true
+  }
+
 }

@@ -21,11 +21,19 @@ resource "openstack_lb_monitor_v2" "monitor" {
   max_retries = var.lb_components["monitor_retries"]
 }
 
-resource "openstack_lb_member_v2" "member" {
-  count         = length(var.server_access_ips)
-  name          = "Member"
-  subnet_id     = var.vip_subnet_id
-  pool_id       = openstack_lb_pool_v2.pool.id
-  address       = var.server_access_ips[count.index]
-  protocol_port = var.lb_components["member_protocol_port"]
+resource "openstack_lb_members_v2" "member" {
+  pool_id = openstack_lb_pool_v2.pool.id
+
+  dynamic "member" {
+    for_each = var.server_access_ips
+    content {
+        name           = "Member"
+        subnet_id      = var.vip_subnet_id
+        address        = member.value
+        protocol_port  = var.lb_components["member_protocol_port"]
+        weight         = 1
+        backup         = false
+        admin_state_up = true
+    }
+  }
 }

@@ -48,7 +48,6 @@ module "openstack_lb_active_standby" {
   lb_active_flavor_uuid = var.lb_active_flavor_uuid
   lb_private_subnet_id  = module.openstack_environment.private_subnet_id
   lb_servers_access_ips = module.openstack_environment.private_network_ips
-  lb_ssl_container      = var.ssl_container_file
 
   depends_on = [
     module.openstack_environment,

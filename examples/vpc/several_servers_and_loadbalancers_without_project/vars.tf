@@ -26,10 +26,6 @@ variable "lb_active_flavor_uuid" {
   default = "d3b8898c-af94-47f8-9996-65b9c6aa95e2"
 }
 
-variable "ssl_container_file" {
-  default = "ssl_certificate/www.test-ssl-octavia.com.p12"
-}
-
 variable "server_image_name" {
   default = "Ubuntu 20.04 LTS 64-bit"
 }
@@ -37,8 +33,8 @@ variable "server_image_name" {
 variable "lb_active_components" {
   default = {
     component_1 = {
-      listener_protocol          = "TERMINATED_HTTPS"
-      listener_protocol_port     = 443
+      listener_protocol          = "HTTP"
+      listener_protocol_port     = 8090
       listener_x_forwarded_for   = true
       listener_x_forwarded_port  = false
       listener_x_forwarded_proto = false

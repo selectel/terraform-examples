@@ -13,7 +13,7 @@ variable "region" {
 }
 
 variable "kube_version" {
-  default = "1.16.8"
+  default = "1.22.7"
 }
 
 variable "enable_autorepair" {
@@ -66,4 +66,29 @@ variable "volume_gb" {
 
 variable "volume_type" {
   default = "fast.ru-3a"
+}
+
+variable "labels" {
+  default = {
+    "label1":"value1", 
+    "label2":"value2"
+  }
+}
+
+variable "taints" {
+  type = list(object({
+    key = string
+    value = string
+    effect =string
+  }))
+  default =[ {
+    effect = "NoSchedule"
+    key = "key3"
+    value = "value3"
+  },
+  {
+    effect = "NoSchedule"
+    key = "key2"
+    value = "value2"
+  } ]
 }

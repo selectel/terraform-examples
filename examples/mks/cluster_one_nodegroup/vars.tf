@@ -90,6 +90,5 @@ variable "taints" {
     effect = "NoSchedule"
     key = "key2"
     value = "value2"
-  }
-  ]
+  } ]
 }

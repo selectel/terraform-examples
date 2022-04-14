@@ -26,6 +26,10 @@ Terraform module for creating a single Selectel MKS nodegroup.
 
   * `volume_type` - An OpenStack blockstorage volume type for each node.
 
+  * `labels` - List of user-defined Kubernetes labels, that will be applied for each node in the group.
+
+  * `taints` - List of user-defined Kubernetes taints, that will be applied for each node in the group.
+
 ## Outputs
 
   * `nodegroup_id` - ID of the created MKS nodegroup.

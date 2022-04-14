@@ -31,3 +31,7 @@ variable "volume_gb" {
 }
 
 variable "volume_type" {}
+
+variable "labels" {}
+
+variable "taints" {}

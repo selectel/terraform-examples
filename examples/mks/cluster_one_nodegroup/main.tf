@@ -37,4 +37,6 @@ module "kubernetes_nodegroup" {
   ram_mb            = var.ram_mb
   volume_gb         = var.volume_gb
   volume_type       = var.volume_type
+  labels            = var.labels
+  taints            = var.taints 
 }

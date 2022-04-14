@@ -10,4 +10,13 @@ resource "selectel_mks_nodegroup_v1" "nodegroup_1" {
   ram_mb            = var.ram_mb
   volume_gb         = var.volume_gb
   volume_type       = var.volume_type
+  labels            = var.labels
+  dynamic "taints" {
+    for_each = var.taints[*]
+    content {
+      key = taints.value["key"]
+      value = taints.value["value"]
+      effect = taints.value["effect"]
+    }
+  }
 }

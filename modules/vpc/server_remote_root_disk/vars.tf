@@ -43,3 +43,4 @@ variable "server_ssh_key_user" {}
 variable "server_license_type" {
   default = ""
 }
+variable "server_group" {}

@@ -103,5 +103,12 @@ module "server_group" {
 
 resource "openstack_compute_servergroup_v2" "server_group_1" {
   server_group_id = openstack_compute_servergroup_v2.server_group_1.id
-  name = openstack_compute_servergroup_v2.server_group_1.name
+  name            = openstack_compute_servergroup_v2.server_group_1.name
+
+  dynamic "scheduler_hints" {
+    for_each = var.server_group != "" ? [var.server_group] : []
+    content {
+      group = var.server_group
+    }
+  }
 }

@@ -98,4 +98,10 @@ resource "openstack_networking_floatingip_associate_v2" "association_1" {
 
 module "server_group" {
   source = "../server_group"
+  policies = openstack_compute_servergroup_v2.server_group_1.policies
+}
+
+resource "openstack_compute_servergroup_v2" "server_group_1" {
+  server_group_id = openstack_compute_servergroup_v2.server_group_1.id
+  name = openstack_compute_servergroup_v2.server_group_1.name
 }

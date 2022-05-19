@@ -13,6 +13,10 @@ module "project_with_user" {
   user_password = var.user_password
 }
 
+module "server_group" {
+  source = "../../../modules/vpc/server_group"
+}
+
 # Create an OpenStack Compute instance.
 module "server_remote_root_disk" {
   source = "../../../modules/vpc/server_remote_root_disk"
@@ -35,5 +39,12 @@ module "server_remote_root_disk" {
   server_image_name   = var.server_image_name
   server_ssh_key      = file("~/.ssh/id_rsa.pub")
   server_ssh_key_user = module.project_with_user.user_id
-  server_group        = var.server_group_name
+  server_group_id     = module.server_group.server_group_id
+
+  dynamic "scheduler_hints" {
+    for_each = var.server_group != "" ? [var.server_group] : []
+    content {
+      group = var.server_group
+    }
+  }
 }

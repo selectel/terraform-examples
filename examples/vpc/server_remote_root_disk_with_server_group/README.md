@@ -1,4 +1,4 @@
-# Server with remote root disk
+# Server with remote root disk and server group
 
 This environment will create a Selectel VPC project with a single server booted
 from a remote disk with a server group.

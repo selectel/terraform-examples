@@ -95,3 +95,7 @@ resource "openstack_networking_floatingip_associate_v2" "association_1" {
   port_id     = openstack_networking_port_v2.port_1.id
   floating_ip = module.floatingip.floatingip_address
 }
+
+module "server_group" {
+  source = "../server_group"
+}

@@ -52,4 +52,6 @@ variable "server_image_name" {
   default = "Ubuntu 18.04 LTS 64-bit"
 }
 
-variable "server_group" {}
+variable "server_group" {
+  default = 1
+}

@@ -85,6 +85,13 @@ resource "openstack_compute_instance_v2" "instance_1" {
   vendor_options {
     ignore_resize_confirmation = true
   }
+
+  dynamic "scheduler_hints" {
+    for_each = var.server_group != "" ? [var.server_group] : []
+    content {
+      group = module.server_group.server_group_id
+    }
+  }
 }
 
 module "floatingip" {
@@ -98,17 +105,5 @@ resource "openstack_networking_floatingip_associate_v2" "association_1" {
 
 module "server_group" {
   source = "../server_group"
-  policies = openstack_compute_servergroup_v2.server_group_1.policies
 }
 
-resource "openstack_compute_servergroup_v2" "server_group_1" {
-  server_group_id = openstack_compute_servergroup_v2.server_group_1.id
-  name            = openstack_compute_servergroup_v2.server_group_1.name
-
-  dynamic "scheduler_hints" {
-    for_each = var.server_group != "" ? [var.server_group] : []
-    content {
-      group = var.server_group
-    }
-  }
-}

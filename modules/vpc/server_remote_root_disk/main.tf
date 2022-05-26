@@ -1,13 +1,3 @@
-provider "openstack" {
-  user_name           = var.os_user_name
-  tenant_name         = var.os_project_name
-  password            = var.os_user_password
-  project_domain_name = var.os_domain_name
-  user_domain_name    = var.os_domain_name
-  auth_url            = var.os_auth_url
-  region              = var.os_region
-}
-
 resource "random_string" "random_name" {
   length  = 5
   special = false
@@ -87,9 +77,9 @@ resource "openstack_compute_instance_v2" "instance_1" {
   }
 
   dynamic "scheduler_hints" {
-    for_each = var.server_group != "" ? [var.server_group] : []
+    for_each = var.server_group_id != "" ? [var.server_group_id] : []
     content {
-      group = module.server_group.server_group_id
+      group = var.server_group_id
     }
   }
 }
@@ -102,8 +92,3 @@ resource "openstack_networking_floatingip_associate_v2" "association_1" {
   port_id     = openstack_networking_port_v2.port_1.id
   floating_ip = module.floatingip.floatingip_address
 }
-
-module "server_group" {
-  source = "../server_group"
-}
-

@@ -20,10 +20,6 @@ variable "os_auth_url" {
   default = "https://api.selvpc.ru/identity/v3"
 }
 
-variable "os_region" {
-  default = "ru-3"
-}
-
 variable "server_name" {
   default = "tf_server"
 }
@@ -52,6 +48,10 @@ variable "server_image_name" {
   default = "Ubuntu 18.04 LTS 64-bit"
 }
 
-variable "server_group" {
-  default = 1
+variable "server_group_policy" {
+  default = ["anti-affinity"]
+}
+
+variable "server_group_name" {
+  default = "anti_affinity_group"
 }

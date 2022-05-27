@@ -1,13 +1,3 @@
-provider "openstack" {
-  user_name           = var.os_user_name
-  tenant_name         = var.os_project_name
-  password            = var.os_user_password
-  project_domain_name = var.os_domain_name
-  user_domain_name    = var.os_domain_name
-  auth_url            = var.os_auth_url
-  region              = var.os_region
-}
-
 resource "random_string" "random_name" {
   length  = 5
   special = false
@@ -84,6 +74,13 @@ resource "openstack_compute_instance_v2" "instance_1" {
 
   vendor_options {
     ignore_resize_confirmation = true
+  }
+
+  dynamic "scheduler_hints" {
+    for_each = var.server_group_id != "" ? [var.server_group_id] : []
+    content {
+      group = var.server_group_id
+    }
   }
 }
 

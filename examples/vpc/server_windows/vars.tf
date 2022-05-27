@@ -20,10 +20,6 @@ variable "os_auth_url" {
   default = "https://api.selvpc.ru/identity/v3"
 }
 
-variable "os_region" {
-  default = "ru-3"
-}
-
 variable "server_name" {
   default = "tf_server"
 }

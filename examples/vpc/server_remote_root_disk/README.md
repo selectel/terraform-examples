@@ -1,22 +1,34 @@
-# Server with remote root disk
+# Пример создания проекта, сервера с сетевым диском.
 
-This environment will create a Selectel VPC project with a single server booted
-from a remote disk.
+Используется два terraform провайдера:
+- Selectel - для создания проекта, пользователя и роли.
+- Openstack - для создания инстансов, сетевой инфраструктуры, двух балансировщиков
 
-## Example usage
+## Содержание secrets.tfvars
+
+  * `sel_token` - Ключ API из настроек профиля в панели управления.
+
+  * `user_password` - Пароль пользователя, который будет создан.
+
+## Пример запуска используя переменные окружения
 
 ```sh
 terraform init
 
 env \
-  TF_VAR_sel_account=xxxxx\
-  TF_VAR_sel_token=yyy_xxx \
-  TF_VAR_user_password=secret \
-  terraform apply -target=module.project_with_user
-
-env \
-  TF_VAR_sel_account=xxxxx\
-  TF_VAR_sel_token=yyy_xxx \
+  TF_VAR_sel_token=xxx_yyy \
   TF_VAR_user_password=secret \
   terraform apply
 ```
+
+## или файла secrets.tfvars
+
+```sh
+  terraform apply -var-file secrets.tfvars
+```
+
+## Выходные переменные
+
+  * `server_id` - UUID созданного сервера.
+
+  * `floating_ip` - Публичный IP адрес сервера.

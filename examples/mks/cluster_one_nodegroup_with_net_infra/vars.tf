@@ -78,10 +78,6 @@ variable "volume_gb" {
   default = 32
 }
 
-variable "volume_type" {
-  default = "fast.ru-9a"
-}
-
 variable "labels" {
   default = {
     "label1":"value1", 

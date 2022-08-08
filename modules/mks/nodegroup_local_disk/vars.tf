@@ -30,8 +30,6 @@ variable "volume_gb" {
   default = 10
 }
 
-variable "volume_type" {}
-
 variable "labels" {}
 
 variable "taints" {}

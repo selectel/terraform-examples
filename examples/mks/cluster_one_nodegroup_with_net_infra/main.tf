@@ -68,5 +68,4 @@ module "kubernetes_nodegroup_local_disk" {
   volume_gb         = var.volume_gb
   labels            = var.labels
   taints            = var.taints
-  volume_type       = null
 }

@@ -14,6 +14,7 @@ services.
 │   │   └── postgres_cluster
 │   └── mks
 │       └── cluster_one_nodegroup
+│       └── cluster_one_nodegroup_with_net_infra
 │   └── vpc
 │       ├── server_local_and_remote_disks
 │       ├── server_local_root_disk
@@ -29,6 +30,7 @@ services.
     └── mks
         ├── cluster
         └── nodegroup
+        └── nodegroup_local_disk
     └── vpc
         ├── account_token
         ├── flavor

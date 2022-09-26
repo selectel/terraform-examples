@@ -57,18 +57,21 @@ data "selectel_dbaas_datastore_type_v1" "dt" {
   project_id = var.project_id
   region     = var.region
   filter {
-    engine  = "mysql"
-    version = "8"
+    engine  = "redis"
+    version = "6"
   }
 }
 
 ###############################
-# Поиск флавора
+# Поиск flavor
 ###############################
 
 data "selectel_dbaas_flavor_v1" "flavor" {
-  project_id = var.project_id
-  region     = var.region
+    project_id = var.project_id
+    region     = var.region
+    filter {
+        datastore_type_id = data.selectel_dbaas_datastore_type_v1.dt.datastore_types[0].id
+    }
 }
 
 ###############################
@@ -81,41 +84,10 @@ resource "selectel_dbaas_datastore_v1" "datastore_1" {
   region     = var.region
   type_id    = data.selectel_dbaas_datastore_type_v1.dt.datastore_types[0].id
   subnet_id  = data.openstack_networking_subnet_v2.my_subnet.id
-  node_count = 1
-  flavor_id  = data.selectel_dbaas_flavor_v1.flavor.flavors[0].id
-}
-
-# ###############################
-# # Создание пользователя БД
-# ###############################
-
-resource "selectel_dbaas_user_v1" "user_1" {
-  project_id   = var.project_id
-  region       = var.region
-  datastore_id = selectel_dbaas_datastore_v1.datastore_1.id
-  name         = "user"
-  password     = "secret"
-}
-
-# ####################################
-# # Создание Базы Данных
-# ####################################
-
-resource "selectel_dbaas_database_v1" "database_1" {
-  project_id   = var.project_id
-  region       = var.region
-  datastore_id = selectel_dbaas_datastore_v1.datastore_1.id
-  name         = "db"
-}
-
-####################################
-# "Привязка" пользователя к базе
-####################################
-
-resource "selectel_dbaas_grant_v1" "grant_user1_db1" {
-  project_id   = var.project_id
-  region       = var.region
-  datastore_id = selectel_dbaas_datastore_v1.datastore_1.id
-  database_id  = selectel_dbaas_database_v1.database_1.id
-  user_id      = selectel_dbaas_user_v1.user_1.id
+  node_count = 2
+  redis_password = "quie7Hoh7ohTo[i0bae3Leeb4mai7ca5"
+  flavor_id = data.selectel_dbaas_flavor_v1.flavor.flavors[0].id
+  config = {
+    maxmemory-policy = "noeviction"
+  }
 }

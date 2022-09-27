@@ -12,6 +12,7 @@ services.
 │   │   ├── get_params
 │   │   ├── mysql_cluster
 │   │   └── postgres_cluster
+│   │   └── redis_cluster
 │   └── mks
 │       └── cluster_one_nodegroup
 │       └── cluster_one_nodegroup_with_net_infra

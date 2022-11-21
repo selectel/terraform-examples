@@ -34,3 +34,7 @@ variable "server_license_type" {
 variable "server_group_id" {
   default = ""
 }
+
+variable "server_preemptible_tag" {
+  default = []
+}

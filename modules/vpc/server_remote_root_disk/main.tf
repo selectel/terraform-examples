@@ -72,6 +72,8 @@ resource "openstack_compute_instance_v2" "instance_1" {
     boot_index       = 0
   }
 
+  tags = var.server_preemptible_tag
+
   vendor_options {
     ignore_resize_confirmation = true
   }

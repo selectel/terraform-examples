@@ -1,0 +1,7 @@
+sel_account="SEL_ACCOUNT"
+sel_token="SEL_TOKEN"
+region="REGION"
+project_id="PROJECT_ID"
+user_name="USERNAME"
+user_password="USER_PASSWORD"
+redis_password="REDIS_PASSWORD"

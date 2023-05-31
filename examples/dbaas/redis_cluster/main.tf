@@ -85,7 +85,7 @@ resource "selectel_dbaas_datastore_v1" "datastore_1" {
   type_id    = data.selectel_dbaas_datastore_type_v1.dt.datastore_types[0].id
   subnet_id  = data.openstack_networking_subnet_v2.my_subnet.id
   node_count = 2
-  redis_password = "quie7Hoh7ohTo[i0bae3Leeb4mai7ca5"
+  redis_password = var.redis_password
   flavor_id = data.selectel_dbaas_flavor_v1.flavor.flavors[0].id
   config = {
     maxmemory-policy = "noeviction"

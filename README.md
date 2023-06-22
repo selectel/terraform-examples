@@ -18,6 +18,7 @@ services.
 │       └── cluster_one_nodegroup_with_net_infra
 │   └── vpc
 │       ├── preemptible_server
+│       ├── preemptible_server_with_gpu
 │       ├── server_local_and_remote_disks
 │       ├── server_local_root_disk
 │       ├── server_remote_root_disk

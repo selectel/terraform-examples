@@ -37,6 +37,12 @@ module "nat" {
   ]
 }
 
+# Take information about aviable kubernetes version
+data "selectel_mks_kube_versions_v1" "versions" {
+  project_id = module.project_with_user.project_id
+  region     = var.region
+}
+
 # Create cluster
 module "kubernetes_cluster" {
   source = "../../../modules/mks/cluster"
@@ -44,7 +50,7 @@ module "kubernetes_cluster" {
   cluster_name                      = var.cluster_name
   project_id                        = module.project_with_user.project_id
   region                            = var.region
-  kube_version                      = var.kube_version
+  kube_version                      = data.selectel_mks_kube_versions_v1.versions.default_version
   enable_autorepair                 = var.enable_autorepair
   enable_patch_version_auto_upgrade = var.enable_patch_version_auto_upgrade
   network_id                        = module.nat.network_id

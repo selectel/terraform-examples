@@ -26,10 +26,6 @@ variable "subnet_cidr" {
   default = "10.222.0.0/16"
 }
 
-variable "kube_version" {
-  default = "1.23.6"
-}
-
 variable "enable_autorepair" {
   default = true
 }

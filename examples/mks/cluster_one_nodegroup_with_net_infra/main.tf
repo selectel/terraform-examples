@@ -37,7 +37,7 @@ module "nat" {
   ]
 }
 
-# Take information about available kubernetes version
+# Take information about available kubernetes versions
 data "selectel_mks_kube_versions_v1" "versions" {
   project_id = module.project_with_user.project_id
   region     = var.region

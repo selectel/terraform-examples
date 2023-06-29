@@ -9,13 +9,17 @@ module "project" {
   project_name = var.project_name
 }
 
+data "selectel_mks_kube_versions_v1" "versions" {
+  project_id = module.project.project_id
+  region     = var.region
+
 module "kubernetes_cluster" {
   source = "../../../modules/mks/cluster"
 
   cluster_name                      = var.cluster_name
   project_id                        = module.project.project_id
   region                            = var.region
-  kube_version                      = var.kube_version
+  kube_version                      = data.selectel_mks_kube_versions_v1.versions.default_version
   enable_autorepair                 = var.enable_autorepair
   enable_patch_version_auto_upgrade = var.enable_patch_version_auto_upgrade
   network_id                        = var.network_id

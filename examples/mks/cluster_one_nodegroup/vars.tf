@@ -12,10 +12,6 @@ variable "region" {
   default = "ru-3"
 }
 
-variable "kube_version" {
-  default = "1.22.7"
-}
-
 variable "enable_autorepair" {
   default = true
 }

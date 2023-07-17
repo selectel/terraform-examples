@@ -30,6 +30,7 @@ services.
 │       ├── several_servers_and_loadbalancers_without_project
 │       ├── several_servers_one_network
 │       └── several_servers_routing
+│       └── several_servers_with_networking_and_fwaas
 └── modules
     └── mks
         ├── cluster
@@ -47,6 +48,7 @@ services.
         ├── lb_sngl
         ├── license
         ├── multiple_servers
+        ├── multiple_servers_with_fwaas
         ├── nat
         ├── os_lb_env
         ├── project
@@ -63,6 +65,7 @@ services.
         ├── server_remote_root_disk
         ├── server_remote_root_disk_and_attached_share
         ├── server_remote_root_disk_two_ports
+        ├── server_remote_root_disk_with_gpu
         ├── share
         ├── single_instance
         ├── subnet

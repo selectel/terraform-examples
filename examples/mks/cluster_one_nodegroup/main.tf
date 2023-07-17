@@ -12,6 +12,7 @@ module "project" {
 data "selectel_mks_kube_versions_v1" "versions" {
   project_id = module.project.project_id
   region     = var.region
+}
 
 module "kubernetes_cluster" {
   source = "../../../modules/mks/cluster"
@@ -42,5 +43,5 @@ module "kubernetes_nodegroup" {
   volume_gb         = var.volume_gb
   volume_type       = var.volume_type
   labels            = var.labels
-  taints            = var.taints 
+  taints            = var.taints
 }

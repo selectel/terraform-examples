@@ -30,6 +30,7 @@ services.
 │       ├── several_servers_and_loadbalancers_without_project
 │       ├── several_servers_one_network
 │       └── several_servers_routing
+│       └── several_servers_with_networking_and_fwaas
 └── modules
     └── mks
         ├── cluster

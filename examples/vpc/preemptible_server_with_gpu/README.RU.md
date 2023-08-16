@@ -23,7 +23,9 @@ flavor_id = "3032"
 terraform init
 
 env \
-  TF_VAR_sel_token=yyy_xxx \
-  TF_VAR_user_password=secret \
+  TF_VAR_username=USER \
+  TF_VAR_password=PASSWORD \
+  TF_VAR_domain_name=ACCOUNT_ID \
+  TF_VAR_user_password=xxx \
   terraform apply
 ```

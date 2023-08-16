@@ -5,7 +5,7 @@ module "project" {
 
 module "user" {
   source        = "../user"
-  user_name     = var.user_name
+  user_name     = var.project_user_name
   user_password = var.user_password
 }
 

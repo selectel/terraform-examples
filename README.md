@@ -37,7 +37,6 @@ services.
         └── nodegroup
         └── nodegroup_local_disk
     └── vpc
-        ├── account_token
         ├── flavor
         ├── floatingip
         ├── image_datasource
@@ -52,7 +51,6 @@ services.
         ├── nat
         ├── os_lb_env
         ├── project
-        ├── project_token
         ├── project_with_user
         ├── role
         ├── routing_network

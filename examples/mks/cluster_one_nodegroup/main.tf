@@ -1,6 +1,8 @@
-# Initialize Selectel provider with token.
+# Initialize Selectel provider with service user credentials.
 provider "selectel" {
-  token = var.sel_token
+  username    = var.username
+  password    = var.password
+  domain_name = var.domain_name
 }
 
 module "project" {

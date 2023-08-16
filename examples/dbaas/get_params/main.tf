@@ -6,7 +6,7 @@ terraform {
   required_providers {
     selectel = {
       source  = "selectel/selectel"
-      version = "~> 3.8.4"
+      version = "~> 4.0.0-aplha"
     }
   }
 }
@@ -16,7 +16,9 @@ terraform {
 ###############################
 
 provider "selectel" {
-  token = var.sel_token
+  username    = var.username
+  password    = var.password
+  domain_name = var.domain_name
 }
 
 ################################################

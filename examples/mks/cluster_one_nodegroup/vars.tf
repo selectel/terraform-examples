@@ -1,4 +1,8 @@
-variable "sel_token" {}
+variable "username" {}
+
+variable "password" {}
+
+variable "domain_name" {}
 
 variable "project_name" {
   default = "tf-project"

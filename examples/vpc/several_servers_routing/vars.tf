@@ -1,4 +1,8 @@
-variable "sel_token" {}
+variable "username" {}
+
+variable "password" {}
+
+variable "domain_name" {}
 
 variable "user_password" {}
 
@@ -6,7 +10,7 @@ variable "project_name" {
   default = "routing_example_project"
 }
 
-variable "user_name" {
+variable "project_user_name" {
   default = "routing_example_user"
 }
 
@@ -14,7 +18,7 @@ variable "keypair_name" {
   default = "routing_example_keypair"
 }
 
-variable "os_auth_url" {
+variable "auth_url" {
   default = "https://api.selvpc.ru/identity/v3"
 }
 

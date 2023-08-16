@@ -1,4 +1,8 @@
-variable "sel_token" {}
+variable "username" {}
+
+variable "password" {}
+
+variable "domain_name" {}
 
 variable "user_password" {}
 
@@ -6,7 +10,7 @@ variable "project_name" {
   default = "loadbalancer_project"
 }
 
-variable "user_name" {
+variable "project_user_name" {
   default = "loadbalancer_user"
 }
 
@@ -18,7 +22,7 @@ variable "target_zone" {
   default = "ru-7a"
 }
 
-variable "os_auth_url" {
+variable "auth_url" {
   default = "https://api.selvpc.ru/identity/v3"
 }
 

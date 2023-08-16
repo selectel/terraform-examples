@@ -1,4 +1,4 @@
-variable "user_name" {}
+variable "project_user_name" {}
 
 variable "user_password" {}
 

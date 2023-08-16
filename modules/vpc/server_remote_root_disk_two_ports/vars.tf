@@ -1,14 +1,14 @@
-variable "os_user_name" {}
+variable "project_user_name" {}
 
-variable "os_project_name" {}
+variable "project_name" {}
 
-variable "os_user_password" {}
+variable "user_password" {}
 
-variable "os_domain_name" {}
+variable "domain_name" {}
 
-variable "os_auth_url" {}
+variable "auth_url" {}
 
-variable "os_region" {}
+variable "region" {}
 
 variable "server_vcpus" {
   default = 4

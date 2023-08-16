@@ -18,13 +18,11 @@
 
 ## Содержание secrets.tfvars
 
-  * `project_domain_name` - ID аккаунта.
+  * `username` - Имя сервисного пользователя.
 
-  * `user_domain_name` - ID аккаунта.
+  * `password` - Пароль сервисного пользователя.
 
-  * `user_name` - Имя существующего пользователя, который имеет доступ в проект.
-
-  * `user_password` - Пароль существующего пользователя.
+  * `domain_name` - ID аккаунта.
 
   * `project_name` - Имя проекта, в котором будут созданы ресурсы.
 
@@ -36,10 +34,12 @@
 terraform init
 
 env \
-  TF_VAR_sel_token=xxx_yyy \
-  TF_VAR_user_password=secret \
+  TF_VAR_username=USER \
+  TF_VAR_password=PASSWORD \
+  TF_VAR_domain_name=ACCOUNT_ID \
   terraform apply
 ```
+
 
 ## или файла secrets.tfvars
 

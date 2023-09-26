@@ -1,12 +1,10 @@
-variable "user_password" {}
+variable "username" {}
 
-variable "project_domain_name" {}
+variable "password" {}
 
-variable "user_domain_name" {}
+variable "domain_name" {}
 
 variable "project_name" {}
-
-variable "user_name" {}
 
 variable "target_zone" {}
 
@@ -14,7 +12,7 @@ variable "keypair_name" {
   default = "loadbalancer_example_keypair"
 }
 
-variable "os_auth_url" {
+variable "auth_url" {
   default = "https://api.selvpc.ru/identity/v3"
 }
 

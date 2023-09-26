@@ -1,6 +1,8 @@
 # Инициализация terraform провайдера Selectel
 provider "selectel" {
-  token = var.sel_token
+  username    = var.username
+  password    = var.password
+  domain_name = var.domain_name
 }
 
 # Создание проекта, пользователя и роли
@@ -20,9 +22,9 @@ provider "openstack" {
   user_name           = var.user_name
   tenant_name         = var.project_name
   password            = var.user_password
-  project_domain_name = regex("[[:digit:]]+$", var.sel_token)
-  user_domain_name    = regex("[[:digit:]]+$", var.sel_token)
-  auth_url            = var.os_auth_url
+  project_domain_name = var.domain_name
+  user_domain_name    = var.domain_name
+  auth_url            = var.auth_url
   region              = substr(var.target_zone, 0, 4)
   use_octavia         = true
 }
@@ -32,7 +34,7 @@ module "openstack_environment" {
   providers = {
     openstack = openstack,
   }
-  source = "../../../modules/vpc/os_lb_env"
+  source = "../../../modules/vpc/lb_env"
 
   target_zone        = var.target_zone
   keypair_name       = var.keypair_name

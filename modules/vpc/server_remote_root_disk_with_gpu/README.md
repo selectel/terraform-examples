@@ -5,17 +5,17 @@ remote root volume, preemtible tag and GPU.
 
 ## Variables
 
-  * `os_user_name` - OpenStack username.
+  * `user_name` - OpenStack username.
 
-  * `os_project_name` - OpenStack username.
+  * `project_name` - OpenStack username.
 
-  * `os_user_password` - OpenStack username.
+  * `user_password` - OpenStack username.
 
-  * `os_domain_name` - OpenStack username.
+  * `domain_name` - OpenStack username.
 
-  * `os_auth_url` - OpenStack username.
+  * `auth_url` - OpenStack username.
 
-  * `os_region` - OpenStack username.
+  * `region` - OpenStack username.
 
   * `flavor_id` - Server configuration ID.
 

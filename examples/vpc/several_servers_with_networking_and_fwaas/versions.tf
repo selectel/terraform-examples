@@ -2,6 +2,7 @@ terraform {
   required_providers {
     selectel = {
       source = "selectel/selectel"
+      version = "~> 4.0.0-aplha"
     }
     openstack = {
       source = "terraform-provider-openstack/openstack"

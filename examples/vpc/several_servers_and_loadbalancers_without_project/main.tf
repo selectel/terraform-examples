@@ -1,11 +1,11 @@
 # Инициализация провайдера Openstack
 provider "openstack" {
-  user_name           = var.user_name
+  user_name           = var.username
   tenant_name         = var.project_name
-  password            = var.user_password
-  project_domain_name = var.project_domain_name
-  user_domain_name    = var.user_domain_name
-  auth_url            = var.os_auth_url
+  password            = var.password
+  project_domain_name = var.domain_name
+  user_domain_name    = var.domain_name
+  auth_url            = var.auth_url
   region              = substr(var.target_zone, 0, 4)
   use_octavia         = true
 }

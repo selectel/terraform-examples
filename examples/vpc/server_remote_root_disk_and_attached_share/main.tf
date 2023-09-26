@@ -1,25 +1,26 @@
 # Инициализация провайдера Selectel
 provider "selectel" {
-  token = var.sel_token
+  username    = var.username
+  password    = var.password
+  domain_name = var.domain_name
 }
-
 # Создание проекта, пользователя и роли
 module "selectel_section" {
   source = "../../../modules/vpc/project_with_user"
 
   project_name  = var.project_name
-  user_name     = var.user_name
+  user_name     = var.project_user_name
   user_password = var.user_password
 }
 
 # Инициализация провайдера Openstack
 provider "openstack" {
-  user_name           = var.user_name
+  user_name           = var.project_user_name
   tenant_name         = var.project_name
   password            = var.user_password
-  project_domain_name = regex("[[:digit:]]+$", var.sel_token)
-  user_domain_name    = regex("[[:digit:]]+$", var.sel_token)
-  auth_url            = var.os_auth_url
+  project_domain_name = var.domain_name
+  user_domain_name    = var.domain_name
+  auth_url            = var.auth_url
   region              = substr(var.server_zone, 0, 4)
 }
 

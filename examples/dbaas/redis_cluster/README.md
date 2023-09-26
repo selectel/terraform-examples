@@ -15,19 +15,16 @@ vim vars.tfvars
 ```
 
 ```ini
-# ID в my.selectel.ru/номер договора
-sel_account="SEL_ACCOUNT"
-# Токен, https://my.selectel.ru/profile/apikeys
-sel_token="SEL_TOKEN"
-
+# Сервисный пользователь, https://my.selectel.ru/profile/users_management/users
+username="USER"
+password="PASSWORD"
+# ID аккаунта
+domain_name="ACCOUNT_ID"
 # ID проекта Облачной Платформы
 project_id="PROJECT_ID"
 # Регион проекта Облачной Платформы
 region="REGION"
-# Пользователь OpenStack, привязанный к проекту
-user_name="USERNAME"
-# Пароль пользователь OpenStack
-user_password="USER_PASSWORD"
+
 # Пароль для Редиса
 redis_password="REDIS_PASSWORD"
 ```

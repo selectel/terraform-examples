@@ -13,8 +13,11 @@ vim vars.tfvars
 ```
 
 ```ini
-# Токен, https://my.selectel.ru/profile/apikeys
-sel_token="SEL_TOKEN"
+# Сервисный пользователь, https://my.selectel.ru/profile/users_management/users
+username="USER"
+password="PASSWORD"
+# ID аккаунта
+domain_name="ACCOUNT_ID"
 # ID проекта Облачной Платформы
 project_id="PROJECT_ID"
 # Регион проекта Облачной Платформы

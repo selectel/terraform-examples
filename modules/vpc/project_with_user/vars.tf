@@ -8,6 +8,6 @@ variable "project_name" {
   default = "tf_project"
 }
 
-variable "user_name" {
+variable "project_user_name" {
   default = "tf_user"
 }

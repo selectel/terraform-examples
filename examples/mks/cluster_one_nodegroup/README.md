@@ -8,6 +8,8 @@ This environment will create a Selectel VPC Project with a single MKS Cluster wi
 terraform init
 
 env \
-  TF_VAR_sel_token=yyy_xxx \
+  TF_VAR_username="USER" \
+  TF_VAR_password="PASSWORD" \
+  TF_VAR_domain_name="ACCOUNT_ID" \
   terraform apply
 ```

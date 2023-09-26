@@ -1,6 +1,8 @@
-# Initialize Selectel provider with token.
+# Initialize Selectel provider with service user.
 provider "selectel" {
-  token = var.sel_token
+  username    = var.username
+  password    = var.password
+  domain_name = var.domain_name
 }
 
 # Create the main project with user.
@@ -10,7 +12,7 @@ module "project_with_user" {
   source = "../../../modules/vpc/project_with_user"
 
   project_name  = var.project_name
-  user_name     = var.user_name
+  user_name     = var.project_user_name
   user_password = var.user_password
 }
 
@@ -19,12 +21,12 @@ module "server_local_and_remote_disks" {
   source = "../../../modules/vpc/server_local_and_remote_disks"
 
   # OpenStack auth.
-  os_project_name  = var.project_name
-  os_user_name     = var.user_name
-  os_user_password = var.user_password
-  os_domain_name   = var.sel_account
-  os_auth_url      = var.os_auth_url
-  os_region        = var.os_region
+  project_name      = var.project_name
+  project_user_name = var.project_user_name
+  user_password     = var.user_password
+  domain_name       = var.domain_name
+  auth_url          = var.auth_url
+  region            = var.region
 
   # OpenStack Instance parameters.
   server_name               = var.server_name

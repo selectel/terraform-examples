@@ -1,6 +1,8 @@
-variable "sel_account" {}
+variable "username" {}
 
-variable "sel_token" {}
+variable "password" {}
+
+variable "domain_name" {}
 
 variable "user_password" {}
 
@@ -8,15 +10,15 @@ variable "project_name" {
   default = "fwaas_project"
 }
 
-variable "user_name" {
+variable "project_user_name" {
   default = "fwaas_user"
 }
 
-variable "os_auth_url" {
+variable "auth_url" {
   default = "https://api.selvpc.ru/identity/v3"
 }
 
-variable "os_region" {
+variable "region" {
   default = "ru-3"
 }
 

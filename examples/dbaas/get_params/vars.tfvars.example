@@ -1,3 +1,5 @@
-sel_token="SEL_TOKEN"
-region="REGION"
+username="USER"
+password="PASSWORD"
+domain_name="ACCOUNT_ID"
 project_id="PROJECT_ID"
+region="REGION"

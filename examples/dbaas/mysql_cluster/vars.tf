@@ -1,16 +1,14 @@
-variable "sel_account" {}
+variable "username" {}
 
-variable "sel_token" {}
+variable "password" {}
+
+variable "domain_name" {}
 
 variable "project_id" {}
 
 variable "region" {}
 
-variable "user_name" {}
-
-variable "user_password" {}
-
-variable "os_auth_url" {
+variable "auth_url" {
   default = "https://api.selvpc.ru/identity/v3"
 }
 

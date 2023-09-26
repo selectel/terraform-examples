@@ -6,7 +6,7 @@ terraform {
   required_providers {
     selectel = {
       source  = "selectel/selectel"
-      version = "~> 3.8.4"
+      version = "~> 4.0.0-aplha"
     }
     openstack = {
       source  = "terraform-provider-openstack/openstack"
@@ -20,7 +20,9 @@ terraform {
 ###############################
 
 provider "selectel" {
-  token = var.sel_token
+  username    = var.username
+  password    = var.password
+  domain_name = var.domain_name
 }
 
 ###############################
@@ -28,12 +30,12 @@ provider "selectel" {
 ###############################
 
 provider "openstack" {
-  user_name           = var.user_name
-  password            = var.user_password
+  user_name           = var.username
+  password            = var.password
   tenant_id           = var.project_id
-  project_domain_name = var.sel_account
-  user_domain_name    = var.sel_account
-  auth_url            = var.os_auth_url
+  project_domain_name = var.domain_name
+  user_domain_name    = var.domain_name
+  auth_url            = var.auth_url
   region              = var.region
 }
 

@@ -1,10 +1,14 @@
-variable "sel_token" {}
+variable "username" {}
 
-variable "os_auth_url" {
+variable "password" {}
+
+variable "domain_name" {}
+
+variable "auth_url" {
   default = "https://api.selvpc.ru/identity/v3/auth/"
 }
 
-variable "user_name" {
+variable "project_user_name" {
   default = "tf-user"
 }
 

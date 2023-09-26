@@ -1,6 +1,8 @@
-# Initialize Selectel provider with token.
+# Initialize Selectel provider with service user credentials.
 provider "selectel" {
-  token = var.sel_token
+  username    = var.username
+  password    = var.password
+  domain_name = var.domain_name
 }
 
 # Initialize Openstack provider
@@ -10,8 +12,8 @@ provider "openstack" {
   password            = var.user_password
   project_domain_name = var.sel_account
   user_domain_name    = var.sel_account
-  auth_url            = var.os_auth_url
-  region              = var.os_region
+  auth_url            = var.auth_url
+  region              = var.region
 }
 
 # Create the main project with user.

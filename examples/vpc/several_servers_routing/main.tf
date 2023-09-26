@@ -1,14 +1,17 @@
+# Initialize Selectel provider with service user credentials.
 provider "selectel" {
-  token = var.sel_token
+  username    = var.username
+  password    = var.password
+  domain_name = var.domain_name
 }
 
 provider "openstack" {
   user_name           = var.user_name
   tenant_name         = var.project_name
   password            = var.user_password
-  project_domain_name = regex("[[:digit:]]+$", var.sel_token)
-  user_domain_name    = regex("[[:digit:]]+$", var.sel_token)
-  auth_url            = var.os_auth_url
+  project_domain_name = var.domain_name
+  user_domain_name    = var.domain_name
+  auth_url            = var.auth_url
   region              = substr(var.target_zone, 0, 4)
 }
 

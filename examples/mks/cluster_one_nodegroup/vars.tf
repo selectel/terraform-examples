@@ -57,11 +57,11 @@ variable "cpus" {
 }
 
 variable "ram_mb" {
-  default = 2048
+  default = 4096
 }
 
 variable "volume_gb" {
-  default = 20
+  default = 30
 }
 
 variable "volume_type" {

@@ -15,5 +15,5 @@ variable "auth_url" {
 }
 
 variable "network_name" {
-  default = "nat"
+  default = "router-nat"
 }

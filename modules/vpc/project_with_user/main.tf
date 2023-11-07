@@ -4,9 +4,9 @@ module "project" {
 }
 
 module "user" {
-  source        = "../user"
-  user_name     = var.project_user_name
-  user_password = var.user_password
+  source            = "../user"
+  project_user_name = var.project_user_name
+  user_password     = var.user_password
 }
 
 module "role" {

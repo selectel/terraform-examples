@@ -10,9 +10,9 @@ provider "selectel" {
 module "project_with_user" {
   source = "../../../modules/vpc/project_with_user"
 
-  project_name  = var.project_name
-  user_name     = var.project_user_name
-  user_password = var.user_password
+  project_name      = var.project_name
+  project_user_name = var.project_user_name
+  user_password     = var.user_password
 }
 
 # Create an OpenStack Compute instance.
@@ -20,12 +20,12 @@ module "server_remote_root_disk_two_ports" {
   source = "../../../modules/vpc/server_remote_root_disk_two_ports"
 
   # OpenStack auth.
-  project_name  = var.project_name
-  user_name     = var.project_user_name
-  user_password = var.user_password
-  domain_name   = var.domain_name
-  auth_url      = var.auth_url
-  region        = var.region
+  project_name      = var.project_name
+  project_user_name = var.project_user_name
+  user_password     = var.user_password
+  domain_name       = var.domain_name
+  auth_url          = var.auth_url
+  region            = var.region
 
   # OpenStack Instance parameters.
   server_name         = var.server_name

@@ -20,9 +20,9 @@ provider "openstack" {
 module "selectel_section" {
   source = "../../../modules/vpc/project_with_user"
 
-  project_name  = var.project_name
-  user_name     = var.project_user_name
-  user_password = var.user_password
+  project_name      = var.project_name
+  project_user_name = var.project_user_name
+  user_password     = var.user_password
 }
 
 # Создание ресурсов Openstack

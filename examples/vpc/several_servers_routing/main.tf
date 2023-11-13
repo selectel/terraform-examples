@@ -6,7 +6,7 @@ provider "selectel" {
 }
 
 provider "openstack" {
-  user_name           = var.user_name
+  user_name           = var.project_user_name
   tenant_name         = var.project_name
   password            = var.user_password
   project_domain_name = var.domain_name
@@ -21,11 +21,11 @@ module "selectel_section" {
   }
   source = "../../../modules/vpc/routing_selvpc"
 
-  user_password = var.user_password
-  project_name  = var.project_name
-  user_name     = var.user_name
-  target_zone   = var.target_zone
-  keypair_name  = var.keypair_name
+  user_password     = var.user_password
+  project_name      = var.project_name
+  project_user_name = var.project_user_name
+  target_zone       = var.target_zone
+  keypair_name      = var.keypair_name
 }
 
 module "openstack_section" {

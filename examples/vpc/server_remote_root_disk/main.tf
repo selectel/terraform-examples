@@ -9,14 +9,14 @@ provider "selectel" {
 module "selectel_section" {
   source = "../../../modules/vpc/project_with_user"
 
-  project_name  = var.project_name
-  user_name     = var.user_name
-  user_password = var.user_password
+  project_name      = var.project_name
+  project_user_name = var.project_user_name
+  user_password     = var.user_password
 }
 
 # Инициализация провайдера Openstack
 provider "openstack" {
-  user_name           = var.user_name
+  user_name           = var.project_user_name
   tenant_name         = var.project_name
   password            = var.user_password
   project_domain_name = var.domain_name

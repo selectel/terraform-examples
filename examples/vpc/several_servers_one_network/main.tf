@@ -7,11 +7,11 @@ provider "selectel" {
 
 # Initialize Openstack provider
 provider "openstack" {
-  user_name           = var.user_name
+  user_name           = var.project_user_name
   tenant_name         = var.project_name
   password            = var.user_password
-  project_domain_name = var.sel_account
-  user_domain_name    = var.sel_account
+  project_domain_name = var.domain_name
+  user_domain_name    = var.domain_name
   auth_url            = var.auth_url
   region              = var.region
 }
@@ -21,10 +21,9 @@ provider "openstack" {
 module "project_with_user" {
   source = "../../../modules/vpc/project_with_user"
 
-  project_name  = var.project_name
-  user_name     = var.user_name
-  user_password = var.user_password
-  keypair_name  = var.keypair_name
+  project_name      = var.project_name
+  project_user_name = var.project_user_name
+  user_password     = var.user_password
 }
 
 # Create a network

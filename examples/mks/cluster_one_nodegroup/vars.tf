@@ -13,7 +13,7 @@ variable "cluster_name" {
 }
 
 variable "region" {
-  default = "ru-3"
+  default = "ru-9"
 }
 
 variable "enable_autorepair" {
@@ -37,7 +37,7 @@ variable "maintenance_window_start" {
 }
 
 variable "availability_zone" {
-  default = "ru-3a"
+  default = "ru-9a"
 }
 
 variable "nodes_count" {
@@ -65,7 +65,7 @@ variable "volume_gb" {
 }
 
 variable "volume_type" {
-  default = "fast.ru-3a"
+  default = "fast.ru-9a"
 }
 
 variable "labels" {

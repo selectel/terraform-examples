@@ -11,11 +11,11 @@ services.
 │   ├── dbaas
 │   │   ├── get_params
 │   │   ├── mysql_cluster
-│   │   └── postgres_cluster
+│   │   ├── postgres_cluster
 │   │   └── redis_cluster
-│   └── mks
-│       └── cluster_one_nodegroup
-│       └── cluster_one_nodegroup_with_net_infra
+│   ├── mks
+│   │   ├── cluster_one_nodegroup
+│   │   └── cluster_one_nodegroup_with_net_infra
 │   └── vpc
 │       ├── preemptible_server
 │       ├── preemptible_server_with_gpu
@@ -29,13 +29,13 @@ services.
 │       ├── several_servers_and_loadbalancers_with_project
 │       ├── several_servers_and_loadbalancers_without_project
 │       ├── several_servers_one_network
-│       └── several_servers_routing
+│       ├── several_servers_routing
 │       └── several_servers_with_networking_and_fwaas
 └── modules
-    └── mks
-        ├── cluster
-        └── nodegroup
-        └── nodegroup_local_disk
+    ├── mks
+    │   ├── cluster
+    │   ├── nodegroup
+    │   └── nodegroup_local_disk
     └── vpc
         ├── flavor
         ├── floatingip
@@ -52,7 +52,6 @@ services.
         ├── os_lb_env
         ├── project
         ├── project_with_user
-        ├── role
         ├── routing_network
         ├── routing_os
         ├── routing_selvpc
@@ -67,7 +66,6 @@ services.
         ├── share
         ├── single_instance
         ├── subnet
-        ├── user
         └── vrrp_subnet
 ```
 

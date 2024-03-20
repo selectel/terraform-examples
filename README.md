@@ -32,6 +32,8 @@ services.
 │       ├── several_servers_routing
 │       └── several_servers_with_networking_and_fwaas
 └── modules
+    ├── iam
+    │   └── serviceuser
     ├── mks
     │   ├── cluster
     │   ├── nodegroup

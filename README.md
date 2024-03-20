@@ -54,7 +54,6 @@ services.
         ├── os_lb_env
         ├── project
         ├── project_with_user
-        ├── role
         ├── routing_network
         ├── routing_os
         ├── routing_selvpc
@@ -69,7 +68,6 @@ services.
         ├── share
         ├── single_instance
         ├── subnet
-        ├── user
         └── vrrp_subnet
 ```
 

@@ -2,16 +2,17 @@ module "project" {
   source       = "../project"
   project_name = var.project_name
 }
-resource "selectel_iam_serviceuser_v1" "serdviceuser_1" {
-  name     = var.project_user_name
-  password = var.user_password
-  role {
-    role_name = "member"
-    scope     = "project"
-    project_id = module.project.project_id
-  }
-}
+module "serviceuser" {
+  source = "../../iam/serviceuser"
 
+  user_name = var.project_user_name
+  password  = var.user_password
+  roles = [ {
+    "role_name" = "member"
+    "scope"     = "project"
+    "project_id" = module.project.project_id
+  } ]
+}
 
 module "keypair" {
   count  = var.keypair_name != "" ? 1 : 0

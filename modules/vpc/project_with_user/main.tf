@@ -20,5 +20,5 @@ module "keypair" {
 
   keypair_name       = var.keypair_name
   keypair_public_key = file("~/.ssh/id_rsa.pub")
-  keypair_user_id    = selectel_iam_serviceuser_v1.serdviceuser_1.id
+  keypair_user_id    = selectel_iam_serviceuser_v1.serviceuser_1.id
 }

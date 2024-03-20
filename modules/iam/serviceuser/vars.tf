@@ -1,4 +1,6 @@
-variable "user_name" {}
+variable "user_name" {
+  default = "serviceuser_1"
+}
 
 variable "password" {}
 

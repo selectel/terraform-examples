@@ -1,5 +1,3 @@
-variable "user_password" {}
-
 variable "keypair_name" {
   default = ""
 }
@@ -11,3 +9,5 @@ variable "project_name" {
 variable "project_user_name" {
   default = "tf_user"
 }
+
+variable "user_password" {}

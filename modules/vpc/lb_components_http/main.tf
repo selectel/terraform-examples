@@ -40,3 +40,19 @@ resource "openstack_lb_member_v2" "member" {
   address       = var.server_access_ips[count.index]
   protocol_port = var.lb_components["member_protocol_port"]
 }
+
+resource "openstack_lb_l7policy_v2" "l7policy" {
+  name         = "test"
+  action       = "REDIRECT_TO_URL"
+  description  = "test description"
+  position     = 1
+  listener_id  = openstack_lb_listener_v2.listener.id
+  redirect_url = "http://www.example.com"
+}
+
+resource "openstack_lb_l7rule_v2" "l7rule_1" {
+  l7policy_id  = openstack_lb_l7policy_v2.l7policy.id
+  type         = "PATH"
+  compare_type = "EQUAL_TO"
+  value        = "/api"
+}

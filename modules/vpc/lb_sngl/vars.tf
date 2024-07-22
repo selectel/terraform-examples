@@ -2,7 +2,7 @@ variable "lb_sngl_name" {}
 
 variable "lb_sngl_components" {}
 
-variable "lb_sngl_flavor_uuid" {}
+variable "lb_sngl_flavor_name" {}
 
 variable "lb_public_subnet_id" {}
 

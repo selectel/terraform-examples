@@ -26,8 +26,7 @@ services.
 │       ├── server_remote_root_disk_two_ports
 │       ├── server_remote_root_disk_with_server_group
 │       ├── server_windows
-│       ├── several_servers_and_loadbalancers_with_project
-│       ├── several_servers_and_loadbalancers_without_project
+│       ├── several_servers_and_loadbalancers
 │       ├── several_servers_one_network
 │       ├── several_servers_routing
 │       └── several_servers_with_networking_and_fwaas
@@ -44,6 +43,7 @@ services.
         ├── lb_active_standby
         ├── lb_components
         ├── lb_components_http
+        ├── lb_components_https
         ├── lb_sngl
         ├── license
         ├── multiple_servers
@@ -56,6 +56,8 @@ services.
         ├── routing_os
         ├── routing_selvpc
         ├── routing_servers
+        ├── secrets_manager_certificate
+        ├── secrets_manager_secret
         ├── server_group
         ├── server_local_and_remote_disks
         ├── server_local_root_disk

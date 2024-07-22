@@ -1,24 +1,25 @@
 # Получение UUID конфигурации балансировщика
 data "openstack_loadbalancer_flavor_v2" "flavor_1" {
-  name = var.lb_sngl_flavor_name
+  name = var.lb_active_flavor_name
 }
 
 # Создание балансировщика
 resource "openstack_lb_loadbalancer_v2" "lb" {
-  name          = var.lb_sngl_name
-  vip_subnet_id = var.lb_public_subnet_id
+  name          = var.lb_active_name
+  vip_subnet_id = var.lb_private_subnet_id
   flavor_id     = data.openstack_loadbalancer_flavor_v2.flavor_1.id
 }
 
 # Создание компонентов балансировщика
 module "lb_components" {
-  count  = length(var.lb_sngl_components)
-  source = "../lb_components"
+  count  = length(var.lb_active_components)
+  source = "../lb_components_https"
 
-  lb_components     = var.lb_sngl_components["component_${count.index + 1}"]
+  lb_components     = var.lb_active_components["component_${count.index + 1}"]
   loadbalancer_id   = openstack_lb_loadbalancer_v2.lb.id
-  vip_subnet_id     = var.lb_public_subnet_id
+  vip_subnet_id     = var.lb_private_subnet_id
   server_access_ips = var.lb_servers_access_ips
+  tls_container_ref = var.tls_container_ref
 }
 
 # Создание плавающего адреса и ассоциирование его с портом балансировщика

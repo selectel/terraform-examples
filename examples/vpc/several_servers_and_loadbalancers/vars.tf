@@ -4,12 +4,22 @@ variable "password" {}
 
 variable "domain_name" {}
 
-variable "project_name" {}
+variable "user_password" {}
 
-variable "target_zone" {}
+variable "project_name" {
+  default = "loadbalancer_project"
+}
+
+variable "project_user_name" {
+  default = "loadbalancer_user"
+}
 
 variable "keypair_name" {
-  default = "loadbalancer_example_keypair"
+  default = "loadbalancer_keypair"
+}
+
+variable "target_zone" {
+  default = "ru-7a"
 }
 
 variable "auth_url" {
@@ -20,8 +30,8 @@ variable "lb_active_name" {
   default = "terraform-lb-active-standby"
 }
 
-variable "lb_active_flavor_uuid" {
-  default = "d3b8898c-af94-47f8-9996-65b9c6aa95e2"
+variable "lb_active_flavor_name" {
+  default = "AMPH1.ACT_STNDB.4-2048"
 }
 
 variable "server_image_name" {
@@ -50,12 +60,31 @@ variable "lb_active_components" {
   }
 }
 
+variable "lb_active_https_components" {
+  default = {
+    component_1 = {
+      listener_protocol          = "TERMINATED_HTTPS"
+      listener_protocol_port     = 8443
+      monitor_type               = "HTTPS"
+      monitor_url_path           = "/"
+      monitor_delay              = 20
+      monitor_timeout            = 10
+      monitor_retries            = 5
+      pool_lb_method             = "LEAST_CONNECTIONS"
+      pool_cookie_type           = "APP_COOKIE"
+      pool_cookie_name           = "testCookie"
+      pool_protocol              = "PROXY"
+      member_protocol_port       = 443
+    }
+  }
+}
+
 variable "lb_sngl_name" {
   default = "terraform-lb-sngl"
 }
 
-variable "lb_sngl_flavor_uuid" {
-  default = "3265f75f-01eb-456d-9088-44b813d29a60"
+variable "lb_sngl_flavor_name" {
+  default = "AMPH1.SNGL.2-1024"
 }
 
 variable "lb_sngl_components" {

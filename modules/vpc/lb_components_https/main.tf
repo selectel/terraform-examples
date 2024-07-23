@@ -3,11 +3,7 @@ resource "openstack_lb_listener_v2" "listener" {
   protocol                  = var.lb_components["listener_protocol"]
   protocol_port             = var.lb_components["listener_protocol_port"]
   loadbalancer_id           = var.loadbalancer_id
-  insert_headers = {
-    X-Forwarded-For   = var.lb_components["listener_x_forwarded_for"]
-    X-Forwarded-Port  = var.lb_components["listener_x_forwarded_port"]
-    X-Forwarded-Proto = var.lb_components["listener_x_forwarded_proto"]
-  }
+  default_tls_container_ref = var.tls_container_ref
 }
 
 resource "openstack_lb_pool_v2" "pool" {

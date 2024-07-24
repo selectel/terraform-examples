@@ -1,15 +1,3 @@
-variable "project_user_name" {}
-
-variable "project_name" {}
-
-variable "user_password" {}
-
-variable "domain_name" {}
-
-variable "auth_url" {}
-
-variable "region" {}
-
 variable "server_vcpus" {
   default = 4
 }
@@ -19,7 +7,7 @@ variable "server_ram_mb" {
 }
 
 variable "server_volume_type" {
-  default = "fast.ru-3a"
+  default = "fast.ru-9a"
 }
 
 variable "server_root_disk_gb" {
@@ -33,7 +21,7 @@ variable "server_name" {
 variable "server_image_name" {}
 
 variable "server_zone" {
-  default = "ru-3a"
+  default = "ru-9a"
 }
 
 variable "server_ssh_key" {}

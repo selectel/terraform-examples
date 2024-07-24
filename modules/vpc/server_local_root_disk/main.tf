@@ -1,13 +1,3 @@
-provider "openstack" {
-  user_name           = var.username
-  tenant_name         = var.project_name
-  password            = var.user_password
-  project_domain_name = var.domain_name
-  user_domain_name    = var.domain_name
-  auth_url            = var.auth_url
-  region              = var.region
-}
-
 resource "random_string" "random_name" {
   length  = 5
   special = false

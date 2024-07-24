@@ -5,7 +5,7 @@ variable "password" {}
 variable "domain_name" {}
 
 variable "auth_url" {
-  default = "https://api.selvpc.ru/identity/v3/auth/"
+  default = "https://cloud.api.selcloud.ru/identity/v3"
 }
 
 variable "project_user_name" {

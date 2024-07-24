@@ -19,7 +19,7 @@ variable "keypair_name" {
 }
 
 variable "auth_url" {
-  default = "https://api.selvpc.ru/identity/v3"
+  default = "https://cloud.api.selcloud.ru/identity/v3"
 }
 
 variable "server_name" {

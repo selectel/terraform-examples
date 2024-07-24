@@ -28,6 +28,16 @@ resource "openstack_networking_subnet_v2" "subnet_tf" {
   cidr       = var.subnet_cidr
 }
 
+# Создание порта для сервера
+resource "openstack_networking_port_v2" "port_tf" {
+  network_id     = openstack_networking_network_v2.network_tf.id
+  name           = "${var.base_name}_port"
+  admin_state_up = "true"
+  fixed_ip {
+    subnet_id = openstack_networking_subnet_v2.subnet_tf.id
+  }
+}
+
 # Подключение роутера к подсети
 resource "openstack_networking_router_interface_v2" "router_interface_tf" {
   router_id = openstack_networking_router_v2.router_tf.id
@@ -61,7 +71,7 @@ resource "openstack_compute_instance_v2" "server_tf" {
   key_pair          = openstack_compute_keypair_v2.key_tf.id
   availability_zone = var.server_zone
   network {
-    uuid = openstack_networking_network_v2.network_tf.id
+    port = openstack_networking_port_v2.port_tf.id
   }
   block_device {
     uuid             = openstack_blockstorage_volume_v3.volume_server.id
@@ -86,9 +96,9 @@ resource "openstack_networking_floatingip_v2" "fip_tf" {
 }
 
 # Привязка плавающего адреса к серверу
-resource "openstack_compute_floatingip_associate_v2" "fip_tf" {
+resource "openstack_networking_floatingip_associate_v2" "fip_tf" {
   floating_ip = openstack_networking_floatingip_v2.fip_tf.address
-  instance_id = openstack_compute_instance_v2.server_tf.id
+  port_id     = openstack_networking_port_v2.port_tf.id
 
   provisioner "remote-exec" {
     connection {
@@ -111,7 +121,6 @@ resource "openstack_compute_floatingip_associate_v2" "fip_tf" {
     ]
   }
 }
-
 
 # Создание NFS server_remote_root_disk_and_attached_share
 module "share" {

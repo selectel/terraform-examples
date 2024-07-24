@@ -15,11 +15,11 @@ variable "project_user_name" {
 }
 
 variable "auth_url" {
-  default = "https://api.selvpc.ru/identity/v3"
+  default = "https://cloud.api.selcloud.ru/identity/v3"
 }
 
 variable "region" {
-  default = "ru-3"
+  default = "ru-9"
 }
 
 variable "server_name" {
@@ -27,11 +27,11 @@ variable "server_name" {
 }
 
 variable "server_zone" {
-  default = "ru-3a"
+  default = "ru-9a"
 }
 
 variable "server_volume_type" {
-  default = "fast.ru-3a"
+  default = "fast.ru-9a"
 }
 
 variable "server_flavor_id" {

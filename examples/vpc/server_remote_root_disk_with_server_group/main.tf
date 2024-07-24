@@ -58,5 +58,6 @@ module "server_remote_root_disk" {
 
   depends_on = [
     module.selectel_section,
+    module.custom_server_group,
   ]
 }

@@ -23,7 +23,7 @@ variable "target_zone" {
 }
 
 variable "auth_url" {
-  default = "https://api.selvpc.ru/identity/v3"
+  default = "https://cloud.api.selcloud.ru/identity/v3"
 }
 
 variable "lb_active_name" {
@@ -35,7 +35,7 @@ variable "lb_active_flavor_name" {
 }
 
 variable "server_image_name" {
-  default = "Ubuntu 20.04 LTS 64-bit"
+  default = "Ubuntu 22.04 LTS 64-bit"
 }
 
 variable "lb_active_components" {

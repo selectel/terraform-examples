@@ -26,11 +26,6 @@ module "project_with_user" {
   user_password     = var.user_password
 }
 
-# Create a network
-module "nat" {
-  source = "../../../modules/vpc/nat"
-}
-
 # Create OpenStack Compute instances.
 module "multiple_servers" {
   source = "../../../modules/vpc/multiple_servers"
@@ -44,8 +39,10 @@ module "multiple_servers" {
   server_ram_mb       = var.server_ram_mb
   server_root_disk_gb = var.server_root_disk_gb
   server_image_name   = var.server_image_name
-  keypair_name        = var.keypair_name
+  server_ssh_key      = file("~/.ssh/id_rsa.pub")
+  server_ssh_key_user = module.project_with_user.user_id
 
-  server_network_id = module.nat.network_id
-  server_subnet_id  = module.nat.subnet_id
+  depends_on = [
+    module.project_with_user,
+  ]
 }

@@ -16,3 +16,5 @@ openssl x509 -req -in www.test-ssl-octavia.com.csr -CA rootCA.crt -CAkey rootCA.
 openssl x509 -in www.test-ssl-octavia.com.crt -text -noout
 # convert to pkcs12
 openssl pkcs12 -export -inkey www.test-ssl-octavia.com.key -in www.test-ssl-octavia.com.crt -certfile rootCA.crt -passout pass: -out www.test-ssl-octavia.com.p12
+# generate only jey and certificate
+openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout ssl_certificate/_private_key.pem -out ssl_certificate/_cert.pem

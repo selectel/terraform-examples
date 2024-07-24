@@ -9,6 +9,9 @@ provider "selectel" {
 # This module should be applied first:
 # terraform apply -target=module.project_with_user
 module "project_with_user" {
+  providers = {
+    selectel = selectel,
+  }
   source = "../../../modules/vpc/project_with_user"
 
   project_name      = var.project_name
@@ -16,17 +19,23 @@ module "project_with_user" {
   user_password     = var.user_password
 }
 
+# Initialize Openstack provider.
+provider "openstack" {
+  user_name           = var.project_user_name
+  tenant_name         = var.project_name
+  password            = var.user_password
+  project_domain_name = var.domain_name
+  user_domain_name    = var.domain_name
+  auth_url            = var.auth_url
+  region              = var.region
+}
+
 # Create an OpenStack Compute instance.
 module "server_local_root_disk" {
+  providers = {
+    openstack = openstack,
+  }
   source = "../../../modules/vpc/server_local_root_disk"
-
-  # OpenStack auth.
-  project_name  = var.project_name
-  username      = var.project_user_name
-  user_password = var.user_password
-  domain_name   = var.domain_name
-  auth_url      = var.auth_url
-  region        = var.region
 
   # OpenStack Instance parameters.
   server_name         = var.server_name
@@ -37,4 +46,8 @@ module "server_local_root_disk" {
   server_image_name   = var.server_image_name
   server_ssh_key      = file("~/.ssh/id_rsa.pub")
   server_ssh_key_user = module.project_with_user.user_id
+
+  depends_on = [
+    module.project_with_user,
+  ]
 }

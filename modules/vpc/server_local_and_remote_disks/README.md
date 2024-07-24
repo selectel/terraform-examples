@@ -5,18 +5,6 @@ local root volume with additional remote disk attached.
 
 ## Variables
 
-  * `user_name` - OpenStack username.
-
-  * `project_name` - OpenStack username.
-
-  * `user_password` - OpenStack username.
-
-  * `domain_name` - OpenStack username.
-
-  * `auth_url` - OpenStack username.
-
-  * `region` - OpenStack username.
-
   * `server_vcpus` - Server virtual CPUs (Default: 4).
 
   * `server_ram_mb` - Server RAM (MB) (Default: 8192).

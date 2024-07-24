@@ -19,11 +19,11 @@ variable "keypair_name" {
 }
 
 variable "auth_url" {
-  default = "https://api.selvpc.ru/identity/v3"
+  default = "https://cloud.api.selcloud.ru/identity/v3"
 }
 
 variable "region" {
-  default = "ru-3"
+  default = "ru-9"
 }
 
 variable "count_of_servers" {
@@ -36,7 +36,7 @@ variable "server_name" {
 }
 
 variable "server_zone" {
-  default = "ru-3a"
+  default = "ru-9a"
 }
 
 variable "server_vcpus" {
@@ -52,9 +52,9 @@ variable "server_root_disk_gb" {
 }
 
 variable "server_volume_type" {
-  default = "fast.ru-3a"
+  default = "fast.ru-9a"
 }
 
 variable "server_image_name" {
-  default = "Ubuntu 18.04 LTS 64-bit"
+  default = "Ubuntu 22.04 LTS 64-bit"
 }

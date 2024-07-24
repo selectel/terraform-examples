@@ -19,13 +19,13 @@ variable "keypair_name" {
 }
 
 variable "auth_url" {
-  default = "https://api.selvpc.ru/identity/v3"
+  default = "https://cloud.api.selcloud.ru/identity/v3"
 }
 
 variable "target_zone" {
-  default = "ru-3a"
+  default = "ru-9a"
 }
 
 variable "server_image_name" {
-  default = "Ubuntu 18.04 LTS 64-bit"
+  default = "Ubuntu 22.04 LTS 64-bit"
 }

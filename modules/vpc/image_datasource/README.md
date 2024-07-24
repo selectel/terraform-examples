@@ -5,7 +5,7 @@ Terraform module for getting ID for a single Selectel OpenStack Image.
 ## Variables
 
   * `image_name` - Name of the OpenStack Image that needs to be found
-  (Default: "Ubuntu 18.04 LTS 64-bit").
+  (Default: "Ubuntu 22.04 LTS 64-bit").
 
 ## Outputs
 

@@ -6,6 +6,9 @@ provider "selectel" {
 }
 # Создание проекта, пользователя и роли
 module "selectel_section" {
+  providers = {
+    selectel = selectel,
+  }
   source = "../../../modules/vpc/project_with_user"
 
   project_name      = var.project_name
@@ -26,6 +29,9 @@ provider "openstack" {
 
 # Create a server_remote_root_disk_and_attached_share and server, then mount server_remote_root_disk_and_attached_share to server
 module "server_remote_root_disk_connected_share" {
+  providers = {
+    openstack = openstack,
+  }
   source = "../../../modules/vpc/server_remote_root_disk_and_attached_share"
 
   base_name = var.base_name

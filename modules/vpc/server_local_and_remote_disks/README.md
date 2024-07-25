@@ -9,7 +9,7 @@ local root volume with additional remote disk attached.
 
   * `server_ram_mb` - Server RAM (MB) (Default: 8192).
 
-  * `server_volume_type` - Server remote root disk type (Default: "fast.ru-3a")
+  * `server_second_volume_type` - Server remote root disk type (Default: "fast.ru-9a")
 
   * `server_root_disk_gb` - Size of the root disk (GB) (Default: 8).
 

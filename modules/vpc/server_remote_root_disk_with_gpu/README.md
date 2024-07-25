@@ -19,7 +19,7 @@ remote root volume, preemtible tag and GPU.
 
   * `flavor_id` - Server configuration ID.
 
-  * `server_volume_type` - Server remote root disk type (Default: "fast.ru-3a")
+  * `server_volume_type` - Server remote root disk type (Default: "fast.ru-9a")
 
   * `server_root_disk_gb` - Size of the root disk (GB) (Default: 8).
 

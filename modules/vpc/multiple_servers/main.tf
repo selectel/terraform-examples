@@ -9,6 +9,10 @@ resource "random_string" "random_server_name" {
   special = false
 }
 
+module "nat" {
+  source = "../nat"
+}
+
 module "flavor" {
   source               = "../flavor"
   flavor_name          = "flavor-${random_string.random_name.result}"
@@ -25,11 +29,18 @@ module "image_datasource" {
 resource "openstack_networking_port_v2" "port" {
   count      = var.replicas_count
   name       = "${var.server_name}-${random_string.random_server_name[count.index].result}-eth0"
-  network_id = var.server_network_id
+  network_id = module.nat.network_id
 
   fixed_ip {
-    subnet_id = var.server_subnet_id
+    subnet_id = module.nat.subnet_id
   }
+}
+
+module "keypair" {
+  source             = "../keypair"
+  keypair_name       = "keypair-${random_string.random_name.result}"
+  keypair_public_key = var.server_ssh_key
+  keypair_user_id    = var.server_ssh_key_user
 }
 
 resource "openstack_compute_instance_v2" "instance" {
@@ -37,7 +48,7 @@ resource "openstack_compute_instance_v2" "instance" {
   name              = "${var.server_name}-${random_string.random_server_name[count.index].result}"
   image_id          = module.image_datasource.image_id
   flavor_id         = module.flavor.flavor_id
-  key_pair          = var.keypair_name
+  key_pair          = module.keypair.keypair_name
   availability_zone = var.server_zone
 
   network {

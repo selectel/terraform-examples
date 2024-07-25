@@ -70,7 +70,7 @@ variable "volume_type" {
 
 variable "labels" {
   default = {
-    "label1":"value1", 
+    "label1":"value1",
     "label2":"value2"
   }
 }

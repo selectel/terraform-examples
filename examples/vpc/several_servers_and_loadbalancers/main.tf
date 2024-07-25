@@ -92,12 +92,12 @@ module "openstack_lb_active_standby" {
   ]
 }
 
-# Создание балансировщика базового типа с резервированием, HTTPS правилом и сертияикатом
+# Создание балансировщика базового типа с резервированием, HTTPS правилом и сертификатом
 module "openstack_lb_active_standby_with_certificate" {
   providers = {
     openstack = openstack,
   }
-  source = "../../../modules/vpc/lb_active_standby_with_sertificate"
+  source = "../../../modules/vpc/lb_active_standby_with_certificate"
 
   lb_active_name        = var.lb_active_name
   lb_active_components  = var.lb_active_https_components

@@ -1,10 +1,8 @@
-variable "server_network_id" {}
-
-variable "server_subnet_id" {}
-
 variable "server_image_name" {}
 
-variable "keypair_name" {}
+variable "server_ssh_key" {}
+
+variable "server_ssh_key_user" {}
 
 variable "server_name" {
   default = "server"

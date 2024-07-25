@@ -41,6 +41,7 @@ services.
         ├── image_datasource
         ├── keypair
         ├── lb_active_standby
+        ├── lb_active_standby_with_certificate
         ├── lb_components
         ├── lb_components_http
         ├── lb_components_https

@@ -8,7 +8,7 @@
 
   * `lb_active_components` - Переменные компонентов балансировщика.
 
-  * `lb_active_flavor_uuid` - UUID конфигурации балансировщика.
+  * `lb_active_flavor_name` - Имя конфигурации балансировщика.
 
   * `lb_private_subnet_id` - UUID сети, в которй будет создан балансировщик.
 

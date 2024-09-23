@@ -20,9 +20,9 @@ Terraform module for creating a single Selectel MKS nodegroup.
 
   * `cpus` - CPU count for each node (Default: 1).
 
-  * `ram_mb` - RAM count for each node (MB) (Default: 1024). 
+  * `ram_mb` - RAM count for each node (MB) (Default: 4096). 
 
-  * `volume_gb` - Volume size for each node (GB) (Default: 10).
+  * `volume_gb` - Volume size for each node (GB) (Default: 20).
 
   * `volume_type` - An OpenStack blockstorage volume type for each node.
 

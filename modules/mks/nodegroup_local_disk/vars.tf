@@ -23,11 +23,11 @@ variable "cpus" {
 }
 
 variable "ram_mb" {
-  default = 1024
+  default = 4096
 }
 
 variable "volume_gb" {
-  default = 10
+  default = 20
 }
 
 variable "user_data" {

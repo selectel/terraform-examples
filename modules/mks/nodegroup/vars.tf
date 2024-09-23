@@ -32,6 +32,14 @@ variable "volume_gb" {
 
 variable "volume_type" {}
 
+variable "user_data" {
+  default = ""
+}
+
+variable "install_nvidia_device_plugin" {
+  default = false
+}
+
 variable "labels" {}
 
 variable "taints" {}

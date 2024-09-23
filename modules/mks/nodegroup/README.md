@@ -26,6 +26,10 @@ Terraform module for creating a single Selectel MKS nodegroup.
 
   * `volume_type` - An OpenStack blockstorage volume type for each node.
 
+  * `user_data` - Base64-encoded script that worker nodes run on the first boot (Default: "").
+
+  * `install_nvidia_device_plugin` - Enables or disables installation of the NVIDIA Device Plugin and GPU drivers (Default: false).
+
   * `labels` - List of user-defined Kubernetes labels, that will be applied for each node in the group.
 
   * `taints` - List of user-defined Kubernetes taints, that will be applied for each node in the group.

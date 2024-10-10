@@ -24,9 +24,12 @@ Terraform module for creating a single Selectel MKS nodegroup with local disk.
 
   * `volume_gb` - Volume size for each node (GB) (Default: 20).
 
-  * `user_data` - Base64-encoded script that worker nodes run on the first boot (Default: "").
+  * `user_data` - (Optional) Base64-encoded script that worker nodes run on the first boot. Changing this creates a new node group. Learn more about [User data](https://docs.selectel.ru/en/cloud/managed-kubernetes/node-groups/user-data/).
 
-  * `install_nvidia_device_plugin` - Enables or disables installation of the NVIDIA Device Plugin and GPU drivers (Default: false).
+  * `install_nvidia_device_plugin` - (Required) Enables or disables installation of the NVIDIA Device Plugin and GPU drivers.  
+  Boolean flag: 
+    * `true` — for flavors with GPU enables installation of the NVIDIA Device Plugin and GPU drivers. 
+    * `false` — for flavors without GPU and flavors with GPU disables installation of the NVIDIA Device Plugin and GPU drivers. Learn more about [manual installation of GPU drivers](https://docs.selectel.ru/en/cloud/managed-kubernetes/node-groups/install-gpu-drivers/).
 
   * `labels` - List of user-defined Kubernetes labels, that will be applied for each node in the group.
 

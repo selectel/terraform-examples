@@ -33,17 +33,19 @@ module "kubernetes_cluster" {
 module "kubernetes_nodegroup" {
   source = "../../../modules/mks/nodegroup"
 
-  cluster_id        = module.kubernetes_cluster.cluster_id
-  project_id        = module.kubernetes_cluster.project_id
-  region            = module.kubernetes_cluster.region
-  availability_zone = var.availability_zone
-  nodes_count       = var.nodes_count
-  keypair_name      = var.keypair_name
-  affinity_policy   = var.affinity_policy
-  cpus              = var.cpus
-  ram_mb            = var.ram_mb
-  volume_gb         = var.volume_gb
-  volume_type       = var.volume_type
-  labels            = var.labels
-  taints            = var.taints
+  cluster_id                   = module.kubernetes_cluster.cluster_id
+  project_id                   = module.kubernetes_cluster.project_id
+  region                       = module.kubernetes_cluster.region
+  availability_zone            = var.availability_zone
+  nodes_count                  = var.nodes_count
+  keypair_name                 = var.keypair_name
+  affinity_policy              = var.affinity_policy
+  cpus                         = var.cpus
+  ram_mb                       = var.ram_mb
+  volume_gb                    = var.volume_gb
+  volume_type                  = var.volume_type
+  user_data                    = var.user_data
+  install_nvidia_device_plugin = var.install_nvidia_device_plugin
+  labels                       = var.labels
+  taints                       = var.taints
 }

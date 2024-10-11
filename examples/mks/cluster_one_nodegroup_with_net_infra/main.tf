@@ -19,7 +19,7 @@ provider "openstack" {
 # Create project with user
 module "project_with_user" {
   providers = {
-    selectel  = selectel,
+    selectel = selectel,
   }
   source = "../../../modules/vpc/project_with_user"
 
@@ -64,16 +64,18 @@ module "kubernetes_cluster" {
 module "kubernetes_nodegroup_local_disk" {
   source = "../../../modules/mks/nodegroup_local_disk"
 
-  cluster_id        = module.kubernetes_cluster.cluster_id
-  project_id        = module.kubernetes_cluster.project_id
-  region            = module.kubernetes_cluster.region
-  availability_zone = var.availability_zone
-  nodes_count       = var.nodes_count
-  keypair_name      = var.keypair_name
-  affinity_policy   = var.affinity_policy
-  cpus              = var.cpus
-  ram_mb            = var.ram_mb
-  volume_gb         = var.volume_gb
-  labels            = var.labels
-  taints            = var.taints
+  cluster_id                   = module.kubernetes_cluster.cluster_id
+  project_id                   = module.kubernetes_cluster.project_id
+  region                       = module.kubernetes_cluster.region
+  availability_zone            = var.availability_zone
+  nodes_count                  = var.nodes_count
+  keypair_name                 = var.keypair_name
+  affinity_policy              = var.affinity_policy
+  cpus                         = var.cpus
+  ram_mb                       = var.ram_mb
+  volume_gb                    = var.volume_gb
+  user_data                    = var.user_data
+  install_nvidia_device_plugin = var.install_nvidia_device_plugin
+  labels                       = var.labels
+  taints                       = var.taints
 }

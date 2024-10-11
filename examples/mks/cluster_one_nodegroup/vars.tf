@@ -68,27 +68,35 @@ variable "volume_type" {
   default = "fast.ru-9a"
 }
 
+variable "user_data" {
+  default = "IyEvYmluL2Jhc2ggLXYKYXB0IC15IHVwZGF0ZQphcHQgLXkgaW5zdGFsbCBtdHI="
+}
+
+variable "install_nvidia_device_plugin" {
+  default = false
+}
+
 variable "labels" {
   default = {
-    "label1":"value1",
-    "label2":"value2"
+    "label1" : "value1",
+    "label2" : "value2"
   }
 }
 
 variable "taints" {
   type = list(object({
-    key = string
-    value = string
-    effect =string
+    key    = string
+    value  = string
+    effect = string
   }))
-  default =[ {
+  default = [{
     effect = "NoSchedule"
-    key = "key3"
-    value = "value3"
-  },
-  {
-    effect = "NoSchedule"
-    key = "key2"
-    value = "value2"
-  } ]
+    key    = "key3"
+    value  = "value3"
+    },
+    {
+      effect = "NoSchedule"
+      key    = "key2"
+      value  = "value2"
+  }]
 }

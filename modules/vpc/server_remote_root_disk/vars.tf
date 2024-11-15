@@ -14,6 +14,10 @@ variable "server_volume_type" {
   default = "fast.ru-9a"
 }
 
+variable "server_volume_metadata" {
+  default = {}
+}
+
 variable "server_name" {
   default = "server_1"
 }

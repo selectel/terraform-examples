@@ -23,6 +23,8 @@ remote root volume.
 
   * `server_volume_type` - Server remote root disk type (Default: "fast.ru-9a")
 
+  * `server_volume_metadata` - Metadata key/value pairs to associate with the volume.
+
   * `server_root_disk_gb` - Size of the root disk (GB) (Default: 8).
 
   * `server_name` - Name of the server (Default: "server_1")

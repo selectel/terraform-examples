@@ -41,6 +41,7 @@ resource "openstack_blockstorage_volume_v3" "volume_1" {
   image_id          = module.image_datasource.image_id
   volume_type       = var.server_volume_type
   availability_zone = var.server_zone
+  metadata          = var.server_volume_metadata
 
   lifecycle {
     ignore_changes = [image_id]

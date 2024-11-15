@@ -24,6 +24,7 @@ services.
 │       ├── server_remote_root_disk
 │       ├── server_remote_root_disk_and_attached_share
 │       ├── server_remote_root_disk_two_ports
+│       ├── server_remote_root_disk_with_custom_iops
 │       ├── server_remote_root_disk_with_server_group
 │       ├── server_windows
 │       ├── several_servers_and_loadbalancers

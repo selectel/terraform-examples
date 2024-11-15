@@ -8,4 +8,5 @@ resource "selectel_mks_cluster_v1" "cluster_1" {
   network_id                        = var.network_id
   subnet_id                         = var.subnet_id
   maintenance_window_start          = var.maintenance_window_start
+  enable_audit_logs                 = var.enable_audit_logs
 }

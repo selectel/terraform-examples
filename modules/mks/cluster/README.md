@@ -23,6 +23,12 @@ Terraform module for creating a single Selectel MKS cluster.
 
   * `maintenance_window_start` - UTC time in "hh:mm:ss" format of when the cluster will start its maintenance tasks.
 
+  * `enable_audit_logs` - (Optional) Enables or disables collection of audit logs. Learn how to [configure export of audit logs to a logging system](https://docs.selectel.ru/en/cloud/managed-kubernetes/clusters/logs/#configure-export-of-audit-logs).
+
+    * `false` (default) - Audit logs are not collected and are not available for export;
+
+    * `true` - Audit logs are collected and available for export.
+
 ## Outputs
 
   * `cluster_id` - ID of the created MKS cluster.

@@ -100,3 +100,7 @@ variable "taints" {
       value  = "value2"
   }]
 }
+
+variable "enable_audit_logs" {
+  default = false
+}

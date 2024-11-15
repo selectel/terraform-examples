@@ -28,6 +28,7 @@ module "kubernetes_cluster" {
   network_id                        = var.network_id
   subnet_id                         = var.subnet_id
   maintenance_window_start          = var.maintenance_window_start
+  enable_audit_logs                 = var.enable_audit_logs
 }
 
 module "kubernetes_nodegroup" {

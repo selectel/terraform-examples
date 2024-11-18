@@ -27,3 +27,7 @@ variable "subnet_id" {
 variable "maintenance_window_start" {
   default = ""
 }
+
+variable "enable_audit_logs" {
+  default = false
+}

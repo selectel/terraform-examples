@@ -58,6 +58,7 @@ module "kubernetes_cluster" {
   network_id                        = module.nat.network_id
   subnet_id                         = module.nat.subnet_id
   maintenance_window_start          = var.maintenance_window_start
+  enable_audit_logs                 = var.enable_audit_logs
 }
 
 # Create nodegroup

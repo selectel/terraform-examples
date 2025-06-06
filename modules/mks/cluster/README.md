@@ -6,9 +6,9 @@ Terraform module for creating a single Selectel MKS cluster.
 
   * `cluster_name` - The name of the cluster (Default: "cluster-1").
 
-  * `project_id` - An associated Selectel VPC project.
+  * `project_id` - An associated Selectel Cloud project.
 
-  * `region` - A Selectel VPC region of where the cluster is located.
+  * `region` - A Selectel Cloud region of where the cluster is located.
 
   * `kube_version` - The current Kubernetes version of the cluster.
 
@@ -33,6 +33,6 @@ Terraform module for creating a single Selectel MKS cluster.
 
   * `cluster_id` - ID of the created MKS cluster.
 
-  * `project_id` - ID of the VPC project of where the cluster is located.
+  * `project_id` - ID of the Cloud project of where the cluster is located.
 
-  * `region` - VPC region of where the cluster is located.
+  * `region` - Cloud region of where the cluster is located.

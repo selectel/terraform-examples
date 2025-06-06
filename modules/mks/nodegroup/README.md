@@ -6,9 +6,9 @@ Terraform module for creating a single Selectel MKS nodegroup.
 
   * `cluster_id` - ID of the associated MKS cluster.
 
-  * `project_id` - ID of the associated Selectel VPC project.
+  * `project_id` - ID of the associated Selectel Cloud project.
 
-  * `region` - A Selectel VPC region of where the nodegroup is located.
+  * `region` - A Selectel Cloud region of where the nodegroup is located.
 
   * `availability_zone` - An OpenStack availability zone for all nodes in the nodegroup.
 
@@ -20,7 +20,7 @@ Terraform module for creating a single Selectel MKS nodegroup.
 
   * `cpus` - CPU count for each node (Default: 1).
 
-  * `ram_mb` - RAM count for each node (MB) (Default: 4096). 
+  * `ram_mb` - RAM count for each node (MB) (Default: 4096).
 
   * `volume_gb` - Volume size for each node (GB) (Default: 20).
 
@@ -28,9 +28,9 @@ Terraform module for creating a single Selectel MKS nodegroup.
 
   * `user_data` - (Optional) Base64-encoded script that worker nodes run on the first boot. Changing this creates a new node group. Learn more about [User data](https://docs.selectel.ru/en/cloud/managed-kubernetes/node-groups/user-data/).
 
-  * `install_nvidia_device_plugin` - (Required) Enables or disables installation of the NVIDIA Device Plugin and GPU drivers.  
-  Boolean flag: 
-    * `true` — for flavors with GPU enables installation of the NVIDIA Device Plugin and GPU drivers. 
+  * `install_nvidia_device_plugin` - (Required) Enables or disables installation of the NVIDIA Device Plugin and GPU drivers.
+  Boolean flag:
+    * `true` — for flavors with GPU enables installation of the NVIDIA Device Plugin and GPU drivers.
     * `false` — for flavors without GPU and flavors with GPU disables installation of the NVIDIA Device Plugin and GPU drivers. Learn more about [manual installation of GPU drivers](https://docs.selectel.ru/en/cloud/managed-kubernetes/node-groups/install-gpu-drivers/).
 
   * `labels` - List of user-defined Kubernetes labels, that will be applied for each node in the group.

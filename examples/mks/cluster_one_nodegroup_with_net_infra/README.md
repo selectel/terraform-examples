@@ -1,6 +1,6 @@
 # Cluster with nodegroup based on local disks and all required network infrastructure
 
-This environment will create a Selectel VPC Project with a single MKS Cluster with a nodegroup based on local disks and all required network infrastructure.
+This environment will create a Selectel Cloud Project with a single MKS Cluster with a nodegroup based on local disks and all required network infrastructure.
 
 # Example usage
 

@@ -6,7 +6,7 @@ provider "selectel" {
 }
 
 module "project" {
-  source = "../../../modules/vpc/project"
+  source = "../../../modules/cloud/project"
 
   project_name = var.project_name
 }

@@ -16,7 +16,7 @@ services.
 │   ├── mks
 │   │   ├── cluster_one_nodegroup
 │   │   └── cluster_one_nodegroup_with_net_infra
-│   └── vpc
+│   └── cloud
 │       ├── preemptible_server
 │       ├── preemptible_server_with_gpu
 │       ├── server_local_and_remote_disks
@@ -36,7 +36,7 @@ services.
     │   ├── cluster
     │   ├── nodegroup
     │   └── nodegroup_local_disk
-    └── vpc
+    └── cloud
         ├── flavor
         ├── floatingip
         ├── image_datasource
@@ -82,4 +82,4 @@ services.
   many Terraform environments.
   Those modules wrap Terraform resources and datasources and provide
   configurable variables.
-  All of those modules are fully compatible with the Selectel VPC service.
+  All of those modules are fully compatible with the Selectel Cloud service.

@@ -21,7 +21,7 @@ module "project_with_user" {
   providers = {
     selectel = selectel,
   }
-  source = "../../../modules/vpc/project_with_user"
+  source = "../../../modules/cloud/project_with_user"
 
   project_name      = var.project_name
   project_user_name = var.project_user_name
@@ -30,7 +30,7 @@ module "project_with_user" {
 
 # Create network with external router
 module "nat" {
-  source = "../../../modules/vpc/nat"
+  source = "../../../modules/cloud/nat"
 
   subnet_cidr = var.subnet_cidr
 

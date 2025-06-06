@@ -21,6 +21,7 @@ services.
 │       ├── preemptible_server_with_gpu
 │       ├── server_local_and_remote_disks
 │       ├── server_local_root_disk
+│       ├── server_local_root_disk_with_security_group
 │       ├── server_remote_root_disk
 │       ├── server_remote_root_disk_and_attached_share
 │       ├── server_remote_root_disk_two_ports
@@ -51,6 +52,7 @@ services.
         ├── multiple_servers
         ├── multiple_servers_with_fwaas
         ├── nat
+        ├── networking_security_group_with_rules
         ├── os_lb_env
         ├── project
         ├── project_with_user
@@ -63,6 +65,7 @@ services.
         ├── server_group
         ├── server_local_and_remote_disks
         ├── server_local_root_disk
+        ├── server_local_root_disk_with_security_group
         ├── server_remote_root_disk
         ├── server_remote_root_disk_and_attached_share
         ├── server_remote_root_disk_two_ports

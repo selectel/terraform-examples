@@ -20,7 +20,7 @@ resource "openstack_networking_port_v2" "port_1" {
   network_id = module.nat.network_id
   security_group_ids = [module.networking_security_group_1.networking_secgroup_id]
   allowed_address_pairs {
-    ip_address = "10.20.30.40/32"
+    ip_address = "0.0.0.0/0"
   }
 
   fixed_ip {

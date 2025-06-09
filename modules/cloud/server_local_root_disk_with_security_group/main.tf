@@ -19,6 +19,9 @@ resource "openstack_networking_port_v2" "port_1" {
   name       = "${var.server_name}-eth0"
   network_id = module.nat.network_id
   security_group_ids = [module.networking_security_group_1.networking_secgroup_id]
+  allowed_address_pairs {
+    ip_address = "10.20.30.40/32"
+  }
 
   fixed_ip {
     subnet_id = module.nat.subnet_id
@@ -30,12 +33,14 @@ module "networking_security_group_1" {
   name   = "test_security_group"
 }
 
-resource "openstack_networking_port_secgroup_associate_v2" "port_1" {
-  port_id = openstack_networking_port_v2.port_1.id
-  security_group_ids = [
-    module.networking_security_group_1.networking_secgroup_id,
-  ]
-}
+# Note: If this resource is used, the port may still have the default security groups
+# applied, which are automatically created with the project.
+# resource "openstack_networking_port_secgroup_associate_v2" "port_1" {
+#   port_id = openstack_networking_port_v2.port_1.id
+#   security_group_ids = [
+#     module.networking_security_group_1.networking_secgroup_id,
+#   ]
+# }
 
 module "image_datasource" {
   source     = "../image_datasource"

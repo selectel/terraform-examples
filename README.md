@@ -16,6 +16,10 @@ services.
 │   ├── mks
 │   │   ├── cluster_one_nodegroup
 │   │   └── cluster_one_nodegroup_with_net_infra
+│   ├── global_router
+│   │   ├── vpc_to_vpc
+│   │   ├── vpc_to_dedicated
+│   │   └── demo_gr_resources
 │   └── cloud
 │       ├── preemptible_server
 │       ├── preemptible_server_with_gpu

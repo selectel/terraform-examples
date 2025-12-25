@@ -1,8 +1,8 @@
 # initialization
 variable "username" {}
+variable "password" {}
 variable "project_name" {}
 variable "project_id" {}
-variable "password" {}
 variable "domain_name" {}
 variable "auth_url" {
   default = "https://cloud.api.selcloud.ru/identity/v3"
@@ -53,7 +53,6 @@ variable "gr_service_addresses21" {
 
 
 # Instances
-variable "public_ssh_key" {}
 variable "server_image_name" {
   default = "Ubuntu 20.04 LTS 64-bit"
 }

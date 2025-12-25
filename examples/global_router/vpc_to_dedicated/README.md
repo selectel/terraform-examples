@@ -28,11 +28,17 @@ VM_dedicated -> port_21 -> subnet_21 -> network_21 -> router_21 - fip21
   ip route add 10.1.11.0/24 via 10.2.11.1
 ```
 
-## Создание с использованием secrets.tfvars
+## Пример создания
 
 ```sh
-  terraform init
-  terraform apply -var-file secrets-wax.tfvars
+terraform init
+env \
+  TF_VAR_username=USER \
+  TF_VAR_password=PASSWORD \
+  TF_VAR_project_name=PROJECT_NAME \
+  TF_VAR_project_id=PROJECT_ID \
+  TF_VAR_domain_name=ACCOUNT_ID \
+  terraform apply
 ```
 
 ## Выходные переменные

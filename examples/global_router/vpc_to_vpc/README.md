@@ -18,26 +18,17 @@ VM1_ru2 -> port_21 -> subnet_21 -> network_21 -> router_21 - fip21
 
 Берем из документа: https://docs.selectel.ru/terraform/quickstart/
 
-## Создание с использованием secrets.tfvars
+## Пример создания
 
 ```sh
-  terraform init
-  terraform apply -var-file secrets.tfvars
-```
-
-## Пример secrets.tfvars
-
-```txt
-username                  = "santa"
-password                  = "clause"
-domain_name               = "north"
-project_name              = "home"
-project_id                = "11111111111111111111111111111111"
-
-region_name1              = "ru-1"
-region_name2              = "ru-2"
-target_zone1              = "ru-1a"
-target_zone2              = "ru-2a"
+terraform init
+env \
+  TF_VAR_username=USER \
+  TF_VAR_password=PASSWORD \
+  TF_VAR_project_name=PROJECT_NAME \
+  TF_VAR_project_id=PROJECT_ID \
+  TF_VAR_domain_name=ACCOUNT_ID \
+  terraform apply
 ```
 
 ## Дополнительно

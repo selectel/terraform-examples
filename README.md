@@ -57,6 +57,8 @@ services.
         ├── multiple_servers_with_fwaas
         ├── nat
         ├── networking_security_group_with_rules
+        ├── networking_network_with_private_dns_resolver
+        ├── networking_port_with_private_dns_record
         ├── os_lb_env
         ├── project
         ├── project_with_user

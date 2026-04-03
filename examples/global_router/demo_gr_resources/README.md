@@ -1,5 +1,6 @@
 # Пример создания двух серверов в разных регионах подключенных к GR
 
+```
 network_vpc    ->   subnet_vpc
        |               |      
 gr_network_vpc ->  gr_subnet_vpc  <--- gr_static_route_vpc
@@ -13,6 +14,7 @@ gr_network_vpc ->  gr_subnet_vpc  <--- gr_static_route_vpc
 gr_network_dedic  ->  gr_subnet_dedic
         |         
 network_dedic        
+```
 
 + datasources:
 

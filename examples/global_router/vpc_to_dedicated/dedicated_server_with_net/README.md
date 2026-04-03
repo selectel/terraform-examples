@@ -1,6 +1,8 @@
 # Создание сети с Выделенным сервером
 
+```
 Dedicated Server -> dedicated network -> dedicated subnet
+```
 
 ## Входные параметры
 

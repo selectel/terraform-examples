@@ -1,5 +1,6 @@
 # Пример создания двух серверов в разных регионах подключенных к GR
 
+```
 VM1_ru1 -> port_11 -> subnet_11 -> network_11 -> router_11 - fip11
                        |              |
                   gr_subnet_11  gr_network_11
@@ -13,6 +14,7 @@ VM1_ru1 -> port_11 -> subnet_11 -> network_11 -> router_11 - fip11
                   gr_subnet_21  gr_network_21
                        |              |
 VM1_ru2 -> port_21 -> subnet_21 -> network_21 -> router_21 - fip21
+```
 
 ## Версии
 

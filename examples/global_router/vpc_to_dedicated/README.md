@@ -1,5 +1,6 @@
 # Пример создания сервера в облаке и выделенного сервера и соединения их через GR 
 
+```
 VM_vpc       -> port_11 -> subnet_11 -> network_11 -> router_11 - fip11
                        |              |
                   gr_subnet_11  gr_network_11  ------- gr_vpc_zone_ru_1
@@ -13,6 +14,7 @@ VM_vpc       -> port_11 -> subnet_11 -> network_11 -> router_11 - fip11
                   gr_subnet_21  gr_network_21 ------- gr_dedicated_zone_SPB_1
                        |              |
 VM_dedicated -> port_21 -> subnet_21 -> network_21 -> router_21 - fip21
+```
 
 ## Версии
 

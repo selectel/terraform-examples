@@ -23,7 +23,7 @@ variable "auth_url" {
 }
 
 variable "region" {
-  default = "ru-9"
+  default = "ru-6"
 }
 
 variable "server_name" {
@@ -31,7 +31,7 @@ variable "server_name" {
 }
 
 variable "server_zone" {
-  default = "ru-9a"
+  default = "ru-6a"
 }
 
 variable "server_vcpus" {

@@ -21,7 +21,7 @@ variable "share_proto" {
 }
 
 variable "share_type" {
-  default = "basic.ru-9a"
+  default = "universal.ru-6a"
   type = string
 }
 

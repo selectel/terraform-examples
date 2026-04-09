@@ -27,7 +27,7 @@ variable "server_name" {
 }
 
 variable "server_zone" {
-  default = "ru-9a"
+  default = "ru-6a"
 }
 
 variable "server_vcpus" {
@@ -43,11 +43,11 @@ variable "server_root_disk_gb" {
 }
 
 variable "server_volume_type" {
-  default = "universal2.ru-9a"
+  default = "fast2.ru-6a"
 }
 
 variable "server_volume_metadata" {
-  default = {"total_iops_sec": "4500"}
+  default = {"total_iops_sec": "40000"}
 }
 
 variable "server_image_name" {

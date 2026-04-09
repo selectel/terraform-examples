@@ -23,7 +23,7 @@ variable "auth_url" {
 }
 
 variable "target_zone" {
-  default = "ru-9a"
+  default = "ru-6a"
 }
 
 variable "server_image_name" {

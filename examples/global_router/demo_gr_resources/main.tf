@@ -78,7 +78,7 @@ resource "selectel_global_router_static_route_v1" "static_route" {
   router_id = selectel_global_router_router_v1.gr_router.id
   cidr      = var.stat_route_cidr
   next_hop  = var.next_hop_ip
-  name      = "gr_subnet_ru_1"
+  name      = "gr_stat_route_1"
   # explicit dependency, because next_hop should be taken from gr_subnet_1
   # if nexthop belongs to different subnet, this dependency could be removed or updated
   depends_on = [

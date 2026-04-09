@@ -21,7 +21,7 @@ remote root volume.
 
   * `server_ram_mb` - Server RAM (MB) (Default: 8192).
 
-  * `server_volume_type` - Server remote root disk type (Default: "fast.ru-9a")
+  * `server_volume_type` - Server remote root disk type (Default: "fast2.ru-6a")
 
   * `server_volume_metadata` - Metadata key/value pairs to associate with the volume.
 

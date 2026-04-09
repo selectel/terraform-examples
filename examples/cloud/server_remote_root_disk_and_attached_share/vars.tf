@@ -23,7 +23,7 @@ variable "flavor_id" {
 }
 
 variable "server_volume_type" {
-  default = "basic.ru-9a"
+  default = "universal2.ru-6a"
 }
 
 variable "server_volume_size" {
@@ -43,11 +43,11 @@ variable "server_image_name" {
 }
 
 variable "server_zone" {
-  default = "ru-9a"
+  default = "ru-6a"
 }
 
 variable "server_region" {
-  default = "ru-9"
+  default = "ru-6"
 }
 
 variable "ssh_key_path" {
@@ -73,7 +73,7 @@ variable "share_proto" {
 }
 
 variable "share_type" {
-  default = "basic.ru-9a"
+  default = "universal.ru-6a"
   type = string
 }
 

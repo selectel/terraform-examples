@@ -7,7 +7,7 @@ variable "server_ram_mb" {
 }
 
 variable "server_volume_type" {
-  default = "fast.ru-9a"
+  default = "fast2.ru-6a"
 }
 
 variable "server_root_disk_gb" {
@@ -21,7 +21,7 @@ variable "server_name" {
 variable "server_image_name" {}
 
 variable "server_zone" {
-  default = "ru-9a"
+  default = "ru-6a"
 }
 
 variable "server_ssh_key" {}

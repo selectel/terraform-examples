@@ -35,7 +35,7 @@ variable "server_root_disk_gb" {
 }
 
 variable "server_volume_type" {
-  default = "fast.ru-7a"
+  default = "fast2.ru-6a"
 }
 
 variable "server_image_name" {
@@ -50,15 +50,9 @@ variable "server_no_preemptible_tag" {
   default = []
 }
 
-### ATTENTION!!! Do not edit this block, please.
 variable "server_zone" {
   type        = string
   description = "The name of the Selectel's pool."
 
-  default = "ru-7a"
-
-  validation {
-    condition     = can(regex("7a", var.server_zone))
-    error_message = "Preemtible servers are available in ru-7a pool only."
-  }
+  default = "ru-6a"
 }

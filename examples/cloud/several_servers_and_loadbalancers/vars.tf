@@ -19,7 +19,7 @@ variable "keypair_name" {
 }
 
 variable "target_zone" {
-  default = "ru-7a"
+  default = "ru-6a"
 }
 
 variable "auth_url" {

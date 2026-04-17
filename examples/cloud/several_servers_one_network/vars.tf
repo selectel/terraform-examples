@@ -23,7 +23,7 @@ variable "auth_url" {
 }
 
 variable "region" {
-  default = "ru-9"
+  default = "ru-6"
 }
 
 variable "count_of_servers" {
@@ -36,7 +36,7 @@ variable "server_name" {
 }
 
 variable "server_zone" {
-  default = "ru-9a"
+  default = "ru-6a"
 }
 
 variable "server_vcpus" {
@@ -52,7 +52,7 @@ variable "server_root_disk_gb" {
 }
 
 variable "server_volume_type" {
-  default = "fast.ru-9a"
+  default = "fast2.ru-6a"
 }
 
 variable "server_image_name" {

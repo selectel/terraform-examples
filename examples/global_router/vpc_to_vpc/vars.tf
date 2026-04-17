@@ -8,7 +8,7 @@ variable "auth_url" {
   default = "https://cloud.api.selcloud.ru/identity/v3"
 }
 
-# Networking ru-1
+# Networking region 1
 variable "subnet_cidr11" {
   default = "10.1.11.0/24"
 }
@@ -22,16 +22,16 @@ variable "router_ip11" {
   default = "10.1.11.1"
 }
 variable "target_zone1" {
-  default = "ru-1a"
+  default = "ru-6a"
 }
 variable "region_name1" {
-  default = "ru-1"
+  default = "ru-6"
 }
 variable "gr_service_addresses11" {
   default = ["10.1.11.253", "10.1.11.254"]
 }
 
-# Networking ru-2
+# Networking region 2
 variable "subnet_cidr21" {
   default = "10.2.11.0/24"
 }

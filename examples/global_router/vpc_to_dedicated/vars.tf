@@ -22,10 +22,10 @@ variable "router_ip11" {
   default = "10.1.11.3"
 }
 variable "target_zone1" {
-  default = "ru-1a"
+  default = "ru-6a"
 }
 variable "region_name1" {
-  default = "ru-1"
+  default = "ru-6"
 }
 variable "gr_service_addresses11" {
   default = ["10.1.11.253", "10.1.11.254"]

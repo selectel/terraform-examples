@@ -8,7 +8,7 @@ variable "auth_url" {
   default = "https://cloud.api.selcloud.ru/identity/v3"
 }
 
-# Networking ru-1
+# Networking ru-6
 variable "os_network_id" {
   default = "15d0f24-a8fd-49f0-8249-26a7c01020e0"
 }
@@ -32,7 +32,7 @@ variable "gw_ip1" {
   default = "10.1.11.2"
 }
 variable "region_cloud" {
-  default = "ru-1"
+  default = "ru-6"
 }
 variable "gr_service_addresses1" {
   default = ["10.1.11.253", "10.1.11.254"]

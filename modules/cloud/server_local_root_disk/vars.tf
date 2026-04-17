@@ -17,7 +17,7 @@ variable "server_name" {
 variable "server_image_name" {}
 
 variable "server_zone" {
-  default = "ru-9a"
+  default = "ru-6a"
 }
 
 variable "server_ssh_key" {}

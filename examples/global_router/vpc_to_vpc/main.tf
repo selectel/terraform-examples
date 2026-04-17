@@ -1,6 +1,6 @@
 # initialize Openstack providers
 provider "openstack" {
-  alias               = "ru-1"
+  alias               = "ru-6"
   region              = var.region_name1
   user_name           = var.username
   tenant_name         = var.project_name
@@ -31,7 +31,7 @@ provider "selectel" {
 }
 
 # cloud region one
-module "resources_cloud_ru_1" {
+module "resources_cloud_1" {
   source            = "./networks_with_vm"
   router_ip1        = var.router_ip11
   subnet_cidr1      = var.subnet_cidr11
@@ -43,12 +43,12 @@ module "resources_cloud_ru_1" {
   user_data1        = var.user_data1
 
   providers = {
-    openstack = openstack.ru-1
+    openstack = openstack.ru-6
   }
 }
 
 # cloud region two
-module "resources_cloud_ru_2" {
+module "resources_cloud_2" {
   source            = "./networks_with_vm"
   router_ip1        = var.router_ip21
   subnet_cidr1      = var.subnet_cidr21
@@ -60,7 +60,7 @@ module "resources_cloud_ru_2" {
   user_data1        = var.user_data1
 
   providers = {
-    openstack = openstack.ru-2
+    openstack = openstack.ru-9
   }
 }
 
@@ -71,15 +71,15 @@ module "global_router" {
   region_name2 = var.region_name2
   project_id   = var.project_id
 
-  os_network_id_region_1 = module.resources_cloud_ru_1.os_network_id
+  os_network_id_region_1 = module.resources_cloud_1.os_network_id
   subnet_cidr1           = var.subnet_cidr11
-  os_subnet_id_region_1  = module.resources_cloud_ru_1.os_subnet_id
+  os_subnet_id_region_1  = module.resources_cloud_1.os_subnet_id
   gw_ip1                 = var.gw_ip11
   gr_service_addresses1  = var.gr_service_addresses11
 
-  os_network_id_region_2 = module.resources_cloud_ru_2.os_network_id
+  os_network_id_region_2 = module.resources_cloud_2.os_network_id
   subnet_cidr2           = var.subnet_cidr21
   gw_ip2                 = var.gw_ip21
   gr_service_addresses2  = var.gr_service_addresses21
-  os_subnet_id_region_2  = module.resources_cloud_ru_2.os_subnet_id
+  os_subnet_id_region_2  = module.resources_cloud_2.os_subnet_id
 }

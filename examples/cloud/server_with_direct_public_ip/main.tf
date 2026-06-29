@@ -97,9 +97,11 @@ resource "openstack_compute_instance_v2" "instance_1" {
   availability_zone = var.server_zone
 
   network {
+    # `uuid` and `name` are both required. `name` is intentionally a dummy
+    # value to avoid an extra network lookup performed by Nova.
     port = selectel_vpc_public_port_v1.public_port_1.id
     uuid = selectel_vpc_public_port_v1.public_port_1.network_id
-    name = "random-net-name-to-avoid-nova-lookup"
+    name = "dummy-network-name"
   }
 
   lifecycle {

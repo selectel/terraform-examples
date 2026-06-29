@@ -9,7 +9,8 @@ Unlike the floating IP approach (which uses a private port + floating IP associa
 - Selectel project with service user and keypair
 - Security group with SSH (port 22) and ICMP access rules
 - Direct public IP port (`selectel_vpc_public_port_v1`) with the security group attached
-- Compute instance separately attached to the public port
+- Compute instance
+- Compute interface resource (to separately attach a direct public IP port)
 
 ## Example usage
 

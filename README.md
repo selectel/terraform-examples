@@ -32,6 +32,8 @@ services.
 │       ├── server_remote_root_disk_with_custom_iops
 │       ├── server_remote_root_disk_with_server_group
 │       ├── server_windows
+│       ├── server_with_direct_public_ip
+│       ├── server_with_direct_public_ip_separate_attach
 │       ├── several_servers_and_loadbalancers
 │       ├── several_servers_one_network
 │       ├── several_servers_routing

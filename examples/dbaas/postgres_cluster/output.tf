@@ -11,6 +11,14 @@ output "db_user" {
   value = selectel_dbaas_user_v1.user_1.name
 }
 
+output "db_user_settings" {
+  value = selectel_dbaas_user_v1.user_1.settings
+}
+
+output "db_user_roles" {
+  value = selectel_dbaas_user_v1.user_1.roles
+}
+
 output "db_user_password" {
   value = selectel_dbaas_user_v1.user_1.password
 }
